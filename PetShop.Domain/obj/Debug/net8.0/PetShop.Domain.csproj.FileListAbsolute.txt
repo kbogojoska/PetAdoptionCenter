@@ -10,3 +10,4 @@ C:\Users\kater\Desktop\Faks\6_semestar\IS\seminarska-IS\PetShopApp\PetShop.Domai
 C:\Users\kater\Desktop\Faks\6_semestar\IS\seminarska-IS\PetShopApp\PetShop.Domain\obj\Debug\net8.0\refint\PetShop.Domain.dll
 C:\Users\kater\Desktop\Faks\6_semestar\IS\seminarska-IS\PetShopApp\PetShop.Domain\obj\Debug\net8.0\PetShop.Domain.pdb
 C:\Users\kater\Desktop\Faks\6_semestar\IS\seminarska-IS\PetShopApp\PetShop.Domain\obj\Debug\net8.0\ref\PetShop.Domain.dll
+C:\Users\kater\Desktop\Faks\6_semestar\IS\seminarska-IS\PetShopApp\PetShop.Domain\obj\Debug\net8.0\PetShop.Domain.sourcelink.json

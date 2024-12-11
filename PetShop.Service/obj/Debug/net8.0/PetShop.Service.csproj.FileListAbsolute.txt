@@ -15,3 +15,4 @@ C:\Users\kater\Desktop\Faks\6_semestar\IS\seminarska-IS\PetShopApp\PetShop.Servi
 C:\Users\kater\Desktop\Faks\6_semestar\IS\seminarska-IS\PetShopApp\PetShop.Service\obj\Debug\net8.0\refint\PetShop.Service.dll
 C:\Users\kater\Desktop\Faks\6_semestar\IS\seminarska-IS\PetShopApp\PetShop.Service\obj\Debug\net8.0\PetShop.Service.pdb
 C:\Users\kater\Desktop\Faks\6_semestar\IS\seminarska-IS\PetShopApp\PetShop.Service\obj\Debug\net8.0\ref\PetShop.Service.dll
+C:\Users\kater\Desktop\Faks\6_semestar\IS\seminarska-IS\PetShopApp\PetShop.Service\obj\Debug\net8.0\PetShop.Service.sourcelink.json
