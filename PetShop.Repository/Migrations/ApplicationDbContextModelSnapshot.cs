@@ -17,7 +17,7 @@ namespace PetShop.Repository.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.2")
+                .HasAnnotation("ProductVersion", "8.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -159,6 +159,88 @@ namespace PetShop.Repository.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("PetShop.Domain.Entities.AdoptionApplication", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ApplicantId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("PetId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("isValid")
+                        .HasColumnType("bit");
+
+                    b.Property<double>("sumOfAdoptionFee")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicantId");
+
+                    b.HasIndex("PetId");
+
+                    b.ToTable("AdoptionApplications");
+                });
+
+            modelBuilder.Entity("PetShop.Domain.Entities.Pet", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("About")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Breed")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Gender")
+                        .HasColumnType("int");
+
+                    b.Property<string>("HealthInformation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageURL")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("PriceForAdoption")
+                        .HasColumnType("float");
+
+                    b.Property<Guid>("ShelterOfResidenceId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int?>("Size")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Weight")
+                        .HasColumnType("float");
+
+                    b.Property<bool>("isAvailable")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ShelterOfResidenceId");
+
+                    b.ToTable("Pets");
+                });
+
             modelBuilder.Entity("PetShop.Domain.Entities.Shelter", b =>
                 {
                     b.Property<Guid>("Id")
@@ -189,7 +271,7 @@ namespace PetShop.Repository.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Shelters", (string)null);
+                    b.ToTable("Shelters");
                 });
 
             modelBuilder.Entity("PetShop.Domain.Identity.PetShopApplicationUser", b =>
@@ -306,6 +388,36 @@ namespace PetShop.Repository.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("PetShop.Domain.Entities.AdoptionApplication", b =>
+                {
+                    b.HasOne("PetShop.Domain.Identity.PetShopApplicationUser", "Applicant")
+                        .WithMany()
+                        .HasForeignKey("ApplicantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PetShop.Domain.Entities.Pet", "Pet")
+                        .WithMany()
+                        .HasForeignKey("PetId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Applicant");
+
+                    b.Navigation("Pet");
+                });
+
+            modelBuilder.Entity("PetShop.Domain.Entities.Pet", b =>
+                {
+                    b.HasOne("PetShop.Domain.Entities.Shelter", "ShelterOfResidence")
+                        .WithMany()
+                        .HasForeignKey("ShelterOfResidenceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ShelterOfResidence");
                 });
 #pragma warning restore 612, 618
         }

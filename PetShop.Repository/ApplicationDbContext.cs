@@ -12,6 +12,8 @@ namespace PetShop.Repository
         {
         }
         public virtual DbSet<Shelter> Shelters { get; set; }
+        public virtual DbSet<Pet> Pets { get; set; }
+        public virtual DbSet<AdoptionApplication> AdoptionApplications { get; set; }
 
     }
 }
