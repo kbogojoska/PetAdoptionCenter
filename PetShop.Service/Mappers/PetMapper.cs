@@ -51,5 +51,44 @@ namespace PetShop.Service.Mappers
                 ShelterOfResidenceId = pet.ShelterOfResidence?.Id ?? Guid.Empty
             };
         }
+
+        public static void UpdateFromRequestDto(this Pet pet, RequestPetDTO requestDto, Shelter shelter)
+        {
+            pet.Name = requestDto.Name;
+            pet.Weight = requestDto.Weight;
+            pet.Size = requestDto.Size;
+            pet.Age = requestDto.Age;
+            pet.Gender = requestDto.Gender;
+            pet.Breed = requestDto.Breed;
+            pet.About = requestDto.About;
+            pet.Type = requestDto.Type;
+            pet.HealthInformation = requestDto.HealthInformation;
+            pet.ImageURL = requestDto.ImageURL;
+            pet.PriceForAdoption = requestDto.PriceForAdoption;
+            pet.isAvailable = requestDto.isAvailable;
+            pet.ShelterOfResidence = shelter;
+        }
+
+        public static Pet ToPet(this RequestPetDTO requestDto, Shelter shelter)
+        {
+            return new Pet
+            {
+                Name = requestDto.Name,
+                Weight = requestDto.Weight,
+                Size = requestDto.Size,
+                Age = requestDto.Age,
+                Gender = requestDto.Gender,
+                Breed = requestDto.Breed,
+                About = requestDto.About,
+                Type = requestDto.Type,
+                HealthInformation = requestDto.HealthInformation,
+                ImageURL = requestDto.ImageURL,
+                PriceForAdoption = requestDto.PriceForAdoption,
+                isAvailable = requestDto.isAvailable,
+                ShelterOfResidence = shelter
+            };
+        }
+
+
     }
 }

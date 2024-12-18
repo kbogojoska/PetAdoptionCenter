@@ -14,5 +14,7 @@ namespace PetShop.Service.Interface
         RequestPetDTO FindById(Guid id); // Retrieves a pet by Id as ResponsePetDto
         List<RequestPetDTO> FindAll(); // Retrieves all pets as a list of ResponsePetDto
         ResponsePetDTO DeleteById(Guid id);
+        List<RequestPetDTO> FindByShelter(Guid shelterId);
+
     }
 }

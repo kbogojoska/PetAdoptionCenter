@@ -12,6 +12,23 @@
     <a asp-action="Create" class="btn btn-primary">Create New Pet</a>
 </p>
 
+<form method="get" asp-action="Index">
+    <div>
+        <label for="shelterFilter">Filter by Shelter:</label>
+        <select id="shelterFilter" name="shelterId">
+            <option value="">All Shelters</option>
+            @foreach (var shelter in (IEnumerable<PetShop.Domain.DTO.ShelterDTO>)ViewData["Shelters"])
+            {
+                <!option value="@shelter.Id" @(ViewData["SelectedShelterId"]?.ToString() == shelter.Id.ToString() ? "selected" : "")>
+                    @shelter.Name
+                </!option>
+            }
+        </select>
+        <button type="submit">Filter</button>
+    </div>
+</form>
+
+
 <table class="table table-striped">
     <thead>
         <tr>

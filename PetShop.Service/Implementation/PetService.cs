@@ -30,64 +30,36 @@ namespace PetShop.Service.Implementation
 
         public List<RequestPetDTO> FindAll()
         {
-            return petRepository.GetAll() // Get all Pet entities from the repository
-        .Select(item => new RequestPetDTO
-        {
-            Id = item.Id,
-            Name = item.Name,
-            Weight = item.Weight,
-            Size = item.Size,
-            Age = item.Age,
-            Gender = item.Gender,
-            Breed = item.Breed,
-            About = item.About,
-            Type = item.Type,
-            HealthInformation = item.HealthInformation,
-            ImageURL = item.ImageURL,
-            PriceForAdoption = item.PriceForAdoption,
-            isAvailable = item.isAvailable,
-            ShelterOfResidenceId = item.ShelterOfResidence?.Id ?? Guid.Empty
-        })
-        .ToList();
+            return petRepository.GetAll()
+                                .Select(pet => pet.toRequestPetDto())
+                                .ToList();
         }
+
 
         public RequestPetDTO  FindById(Guid id)
         {
-            var pet = petRepository.Get(id);
-            if (pet == null)
-            {
-                throw new Exception("Pet not found."); // Return null if the pet is not found
-            }
+            var pet = petRepository.Get(id) ?? throw new Exception("Pet not found.");
             return pet.toRequestPetDto();
+        }
+
+        public List<RequestPetDTO> FindByShelter(Guid shelterId)
+        {
+            if (shelterId == Guid.Empty)
+            {
+                throw new ArgumentException("Invalid shelter ID.");
+            }
+            var pets = petRepository.FindBy(p => p.ShelterOfResidenceId == shelterId);
+            return pets.Select(pet => pet.toRequestPetDto()).ToList();
         }
 
         public ResponsePetDTO Store(RequestPetDTO requestPetDto)
         {
-           
 
-            var shelter = shelterRepository.Get(requestPetDto.ShelterOfResidenceId);
-            if (shelter == null)
-            {
-                throw new Exception("Shelter not found.");
-            }
-            Pet pet = new Pet
-            {
-                Name = requestPetDto.Name,
-                Weight = requestPetDto.Weight,
-                Size = requestPetDto.Size,
-                Age = requestPetDto.Age,
-                Gender = requestPetDto.Gender,
-                Breed = requestPetDto.Breed,
-                About = requestPetDto.About,
-                Type = requestPetDto.Type,
-                HealthInformation = requestPetDto.HealthInformation,
-                ImageURL = requestPetDto.ImageURL,
-                PriceForAdoption = requestPetDto.PriceForAdoption,
-                isAvailable = requestPetDto.isAvailable,
-                ShelterOfResidence = shelter
-            };
+            var shelter = shelterRepository.Get(requestPetDto.ShelterOfResidenceId) ?? throw new Exception("Shelter not found.");
+            Pet pet = requestPetDto.ToPet(shelter);
 
             petRepository.Insert(pet);
+
             return pet.toResponsePetDto();
         }
 
@@ -102,20 +74,7 @@ namespace PetShop.Service.Implementation
             var shelter = shelterRepository.Get(requestPetDto.ShelterOfResidenceId);
             if (shelter == null) throw new Exception("Shelter not found.");
 
-            pet.Name = requestPetDto.Name;
-            pet.Weight = requestPetDto.Weight;
-            pet.Size = requestPetDto.Size;
-            pet.Age = requestPetDto.Age;
-            pet.Gender = requestPetDto.Gender;
-            pet.Breed = requestPetDto.Breed;
-            pet.About = requestPetDto.About;
-            pet.Type = requestPetDto.Type;
-            pet.HealthInformation = requestPetDto.HealthInformation;
-            pet.ImageURL = requestPetDto.ImageURL;
-            pet.PriceForAdoption = requestPetDto.PriceForAdoption;
-            pet.isAvailable = requestPetDto.isAvailable;
-            pet.ShelterOfResidence = shelter;
-
+            pet.UpdateFromRequestDto(requestPetDto, shelter);
             petRepository.Update(pet);
 
             return pet.toResponsePetDto();

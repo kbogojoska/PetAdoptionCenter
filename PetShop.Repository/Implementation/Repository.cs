@@ -62,5 +62,11 @@ namespace PetShop.Repository.Implementation
             _context.SaveChanges();
             return entity;
         }
+
+        public IEnumerable<T> FindBy(Func<T, bool> predicate)
+        {
+            return _entities.AsEnumerable().Where(predicate);
+        }
+
     }
 }
