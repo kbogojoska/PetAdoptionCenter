@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PetShop.Domain.DTO
 {
-    public class PetDTO
+    public class ResponsePetDTO
     {
         public string? Name {  get; set; }
         public double Weight { get; set; }
@@ -22,6 +22,7 @@ namespace PetShop.Domain.DTO
         public string? ImageURL {  get; set; }
         public double PriceForAdoption {  get; set; }
         public bool isAvailable {  get; set; }
+        //public string ShelterName { get; set; }
         public Guid ShelterOfResidenceId {  get; set; }
     }
 }

@@ -5,37 +5,39 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using PetShop.Domain.DTO;
 using PetShop.Domain.Entities;
 using PetShop.Domain.Enum;
 using PetShop.Repository;
+using PetShop.Service.Implementation;
+using PetShop.Service.Interface;
 
 namespace PetShop.Web.Controllers
 {
     public class PetsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IShelterService _shelterService;
+        private readonly IPetService _petService;
 
-        public PetsController(ApplicationDbContext context)
+        public PetsController(ApplicationDbContext context, IShelterService shelterService, IPetService petService)
         {
             _context = context;
+            _shelterService = shelterService;
+            _petService = petService;
         }
 
         // GET: Pets
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.Pets.ToListAsync());
+            var pets = _petService.FindAll();
+            return View(pets);
         }
 
         // GET: Pets/Details/5
-        public async Task<IActionResult> Details(Guid? id)
+        public async Task<IActionResult> Details(Guid id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var pet = await _context.Pets
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var pet = _petService.FindById(id);
             if (pet == null)
             {
                 return NotFound();
@@ -47,11 +49,18 @@ namespace PetShop.Web.Controllers
         // GET: Pets/Create
         public IActionResult Create()
         {
-            this.ViewData["Shelters"] = _context.Shelters.ToList();
-            this.ViewData["Genders"] = Enum.GetValues(typeof(GenderType));
-            this.ViewData["Sizes"] = Enum.GetValues(typeof(SizeOfAnimal));
-            this.ViewData["AnimalTypes"] = Enum.GetValues(typeof(AnimalType));
-            return this.View();
+            
+            var shelters = _context.Shelters.ToList();
+            var sizes = Enum.GetValues(typeof(SizeOfAnimal)).Cast<SizeOfAnimal>().ToList();
+            var animalTypes = Enum.GetValues(typeof(AnimalType)).Cast<AnimalType>().ToList();
+            var genders = Enum.GetValues(typeof(GenderType)).Cast<GenderType>().ToList();
+
+            ViewData["Shelters"] = shelters;
+            ViewData["Sizes"] = sizes;
+            ViewData["AnimalTypes"] = animalTypes;
+            ViewData["Genders"] = genders;
+
+            return View();
         }
 
         // POST: Pets/Create
@@ -59,67 +68,81 @@ namespace PetShop.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Weight,Size,Age,Gender,Breed,About,Type,HealthInformation,ImageURL,PriceForAdoption,ShelterOfResidence,isAvailable,Id")] Pet pet)
+        public async Task<IActionResult> Create(RequestPetDTO requestPetDto)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                pet.Id = Guid.NewGuid();
-                _context.Add(pet);
-                await _context.SaveChangesAsync();
+                ViewData["Shelters"] = _shelterService.FindAll();
+                return View(requestPetDto);
+            }
+
+            try
+            {
+                var createdPet = _petService.Store(requestPetDto);
                 return RedirectToAction(nameof(Index));
             }
-            return View(pet);
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+                return View(requestPetDto);
+            }
         }
+
+
+
 
         // GET: Pets/Edit/5
         public async Task<IActionResult> Edit(Guid? id)
         {
-            if (id == null)
+            if (id == null || id == Guid.Empty)
             {
-                return NotFound();
+                return NotFound(); 
             }
 
-            var pet = await _context.Pets.FindAsync(id);
+            var pet = _petService.FindById(id.Value);
             if (pet == null)
             {
                 return NotFound();
             }
+            ViewData["Genders"] = Enum.GetValues(typeof(GenderType)).Cast<GenderType>().ToList();
+            ViewData["Types"] = Enum.GetValues(typeof(AnimalType)).Cast<AnimalType>().ToList();
+            ViewData["Sizes"] = Enum.GetValues(typeof(SizeOfAnimal)).Cast<SizeOfAnimal>().ToList();
+            ViewData["Shelters"] = _shelterService.FindAll();
             return View(pet);
-        }
+         }
 
         // POST: Pets/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Name,Weight,Size,Age,Gender,Breed,About,Type,HealthInformation,ImageURL,PriceForAdoption,isAvailable,Id")] Pet pet)
+        public async Task<IActionResult> Edit(Guid id, RequestPetDTO requestPetDto)
         {
-            if (id != pet.Id)
+            if (id != requestPetDto.Id)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                try
+                return View(requestPetDto);
+            }
+
+            try
+            {
+                var shelter = _shelterService.FindById(requestPetDto.ShelterOfResidenceId.ToString());
+                if (shelter == null)
                 {
-                    _context.Update(pet);
-                    await _context.SaveChangesAsync();
+                    throw new Exception("Shelter not found.");
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!PetExists(pet.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                _petService.Update(id, requestPetDto);
                 return RedirectToAction(nameof(Index));
             }
-            return View(pet);
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+                return View(requestPetDto);
+            }
         }
 
         // GET: Pets/Delete/5
@@ -129,9 +152,8 @@ namespace PetShop.Web.Controllers
             {
                 return NotFound();
             }
-
-            var pet = await _context.Pets
-                .FirstOrDefaultAsync(m => m.Id == id);
+            
+            var pet = _petService.FindById(id.Value);
             if (pet == null)
             {
                 return NotFound();
@@ -145,14 +167,14 @@ namespace PetShop.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var pet = await _context.Pets.FindAsync(id);
+            var pet = _petService.DeleteById(id); 
+
             if (pet != null)
             {
-                _context.Pets.Remove(pet);
+                return RedirectToAction(nameof(Index)); 
             }
 
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return NotFound();
         }
 
         private bool PetExists(Guid id)

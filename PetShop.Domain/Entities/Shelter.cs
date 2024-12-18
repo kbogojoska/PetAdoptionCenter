@@ -21,5 +21,6 @@ namespace PetShop.Domain.Entities
         public int AvailableSpaces { get; set; }
         [Required]
         public string? PhoneNumber { get; set; }
+        public virtual ICollection<Pet>? Pets { get; set; }
     }
 }

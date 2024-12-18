@@ -1840,14 +1840,7 @@
           }
         }
       },
-      "System.Formats.Asn1/8.0.1": {
-        "runtime": {
-          "lib/net8.0/System.Formats.Asn1.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.724.31311"
-          }
-        }
-      },
+      "System.Formats.Asn1/8.0.1": {},
       "System.IdentityModel.Tokens.Jwt/6.24.0": {
         "dependencies": {
           "Microsoft.IdentityModel.JsonWebTokens": "6.24.0",
@@ -2013,7 +2006,10 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.2"
         },
         "runtime": {
-          "PetShop.Domain.dll": {}
+          "PetShop.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "PetShop.Repository/1.0.0": {
@@ -2024,7 +2020,10 @@
           "PetShop.Domain": "1.0.0"
         },
         "runtime": {
-          "PetShop.Repository.dll": {}
+          "PetShop.Repository.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "PetShop.Service/1.0.0": {
@@ -2033,7 +2032,10 @@
           "PetShop.Repository": "1.0.0"
         },
         "runtime": {
-          "PetShop.Service.dll": {}
+          "PetShop.Service.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

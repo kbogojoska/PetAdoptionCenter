@@ -5,6 +5,8 @@ using PetShop.Repository;
 using PetShop.Repository.Interface;
 using PetShop.Repository.Implementation;
 using PetShop.Domain.Identity;
+using PetShop.Service.Implementation;
+using PetShop.Service.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +22,9 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
+builder.Services.AddScoped<IShelterService, ShelterService>();
+builder.Services.AddScoped<IPetService, PetService>();
+
 
 var app = builder.Build();
 

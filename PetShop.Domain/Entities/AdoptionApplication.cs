@@ -13,6 +13,8 @@ namespace PetShop.Domain.Entities
         [Required]
         public required PetShopApplicationUser Applicant { get; set; }
         [Required]
+        public Guid PetId { get; set; }
+        [Required]
         public required Pet Pet { get; set; }
         public bool isValid { get; set; } = false;
         [Required]

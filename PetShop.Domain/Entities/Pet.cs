@@ -15,7 +15,7 @@ namespace PetShop.Domain.Entities
         public string? Name {  get; set; }
         [Required]
         public double Weight { get; set; }
-        public SizeOfAnimal? Size {  get; set; }
+        public SizeOfAnimal Size {  get; set; }
         [Required]
         public int Age {  get; set; }
         [Required]
@@ -32,7 +32,9 @@ namespace PetShop.Domain.Entities
         [Required]
         public bool isAvailable { get; set; }
         [Required]
-        public required Shelter ShelterOfResidence {  get; set; }
+        public Guid ShelterOfResidenceId { get; set; }
+        
+        public Shelter? ShelterOfResidence {  get; set; }
 
         public override string? ToString()
         {

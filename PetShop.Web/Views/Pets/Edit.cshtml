@@ -1,6 +1,8 @@
-﻿@model PetShop.Domain.Entities.Pet
+﻿@model PetShop.Domain.DTO.RequestPetDTO
+
 
 @{
+    IEnumerable<PetShop.Domain.DTO.ShelterDTO> shelters = ViewData["Shelters"] as IEnumerable<PetShop.Domain.DTO.ShelterDTO>;
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -24,9 +26,14 @@
                 <span asp-validation-for="Weight" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Size" class="control-label"></label>
-                <input asp-for="Size" class="form-control" />
-                <span asp-validation-for="Size" class="text-danger"></span>
+                 <label asp-for="Size" class="control-label"></label>
+                 <select asp-for="Size" class="form-control">
+                    @foreach (var size in ViewData["Sizes"] as List<PetShop.Domain.Enum.SizeOfAnimal>)
+                    {
+                        <!option value="@size" @(size == Model.Size ? "selected" : "")>@size</!option>
+                    }
+                 </select>
+                 <span asp-validation-for="Size" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Age" class="control-label"></label>
@@ -35,9 +42,15 @@
             </div>
             <div class="form-group">
                 <label asp-for="Gender" class="control-label"></label>
-                <select asp-for="Gender" class="form-control"></select>
+                <select asp-for="Gender" class="form-control">
+                     @foreach (var gender in ViewData["Genders"] as List<PetShop.Domain.Enum.GenderType>)
+                     {
+                           <!option value="@gender" @(gender == Model.Gender ? "selected" : "")>@gender</!option>
+                     }
+                </select>
                 <span asp-validation-for="Gender" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Breed" class="control-label"></label>
                 <input asp-for="Breed" class="form-control" />
@@ -49,9 +62,14 @@
                 <span asp-validation-for="About" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Type" class="control-label"></label>
-                <select asp-for="Type" class="form-control"></select>
-                <span asp-validation-for="Type" class="text-danger"></span>
+                 <label asp-for="Type" class="control-label"></label>
+                 <select asp-for="Type" class="form-control">
+                     @foreach (var type in ViewData["Types"] as List<PetShop.Domain.Enum.AnimalType>)
+                     {
+                           <!option value="@type" @(type == Model.Type ? "selected" : "")>@type</!option>
+                     }
+                 </select>
+                 <span asp-validation-for="Type" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="HealthInformation" class="control-label"></label>
@@ -73,6 +91,22 @@
                     <input class="form-check-input" asp-for="isAvailable" /> @Html.DisplayNameFor(model => model.isAvailable)
                 </label>
             </div>
+            <div class="form-group">
+                <label asp-for="ShelterOfResidenceId" class="control-label"></label>
+                <select asp-for="ShelterOfResidenceId" class="form-control">
+                    @foreach (var shelter in shelters)
+                    {
+                        <!option value="@shelter.Id" @(shelter.Id == Model.ShelterOfResidenceId ? "selected" : "")>
+                            @shelter.Name
+                        </!option>
+                    }
+                </select>
+                <span asp-validation-for="ShelterOfResidenceId" class="text-danger"></span>
+            </div>
+            
+
+
+
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
