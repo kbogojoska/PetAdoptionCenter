@@ -14,5 +14,6 @@ namespace PetShop.Repository.Interface
         T Insert(T entity);
         T Update(T entity);
         T Delete(Guid? id);
+        IEnumerable<T> FindBy(Func<T, bool> predicate);
     }
 }

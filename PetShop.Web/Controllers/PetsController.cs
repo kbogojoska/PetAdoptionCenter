@@ -28,11 +28,33 @@ namespace PetShop.Web.Controllers
         }
 
         // GET: Pets
+        public IActionResult Index(Guid? shelterId)
+        {
+            var shelters = _shelterService.FindAll();
+            ViewData["Shelters"] = shelters; // Populate shelters for the dropdown filter
+
+            List<RequestPetDTO> pets;
+
+            if (shelterId.HasValue)
+            {
+                pets = _petService.FindByShelter(shelterId.Value); // Get pets for the selected shelter
+                ViewData["SelectedShelterId"] = shelterId.Value;  // Track the selected shelter in the view
+            }
+            else
+            {
+                pets = _petService.FindAll(); // Get all pets if no shelter is selected
+            }
+
+            return View(pets);
+        }
+
+        /*
         public IActionResult Index()
         {
             var pets = _petService.FindAll();
             return View(pets);
         }
+        */
 
         // GET: Pets/Details/5
         public async Task<IActionResult> Details(Guid id)

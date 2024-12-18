@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{76D14213-E520-4A1C-AD27-55E38BEE52CE}|PetShopApp{76D14213-E520-4A1C-AD27-55E38BEE52CE}|C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{76D14213-E520-4A1C-AD27-55E38BEE52CE}|PetShopApp{76D14213-E520-4A1C-AD27-55E38BEE52CE}|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|c:\\users\\elena\\desktop\\petadoptioncenter\\petshop.service\\interface\\ipetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|solutionrelative:petshop.service\\interface\\ipetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|c:\\users\\elena\\desktop\\petadoptioncenter\\petshop.service\\implementation\\petservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|solutionrelative:petshop.service\\implementation\\petservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|c:\\users\\elena\\desktop\\petadoptioncenter\\petshop.service\\mappers\\petmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|solutionrelative:petshop.service\\mappers\\petmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|c:\\users\\elena\\desktop\\petadoptioncenter\\petshop.web\\views\\pets\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -15,20 +23,20 @@
       "RelativeMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|solutionrelative:petshop.web\\controllers\\petscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|c:\\users\\elena\\desktop\\petadoptioncenter\\petshop.service\\implementation\\petservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|solutionrelative:petshop.service\\implementation\\petservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B832A271-3F0A-4575-B2D7-65AF557DC623}|PetShop.Repository\\PetShop.Repository.csproj|c:\\users\\elena\\desktop\\petadoptioncenter\\petshop.repository\\implementation\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B832A271-3F0A-4575-B2D7-65AF557DC623}|PetShop.Repository\\PetShop.Repository.csproj|solutionrelative:petshop.repository\\implementation\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|c:\\users\\elena\\desktop\\petadoptioncenter\\petshop.service\\interface\\ipetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|solutionrelative:petshop.service\\interface\\ipetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B832A271-3F0A-4575-B2D7-65AF557DC623}|PetShop.Repository\\PetShop.Repository.csproj|c:\\users\\elena\\desktop\\petadoptioncenter\\petshop.repository\\interface\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B832A271-3F0A-4575-B2D7-65AF557DC623}|PetShop.Repository\\PetShop.Repository.csproj|solutionrelative:petshop.repository\\interface\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76D14213-E520-4A1C-AD27-55E38BEE52CE}|PetShopApp{76D14213-E520-4A1C-AD27-55E38BEE52CE}|C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{76D14213-E520-4A1C-AD27-55E38BEE52CE}|PetShopApp{76D14213-E520-4A1C-AD27-55E38BEE52CE}|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|c:\\users\\elena\\desktop\\petadoptioncenter\\petshop.service\\interface\\igenericcrudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|solutionrelative:petshop.service\\interface\\igenericcrudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B832A271-3F0A-4575-B2D7-65AF557DC623}|PetShop.Repository\\PetShop.Repository.csproj|c:\\users\\elena\\desktop\\petadoptioncenter\\petshop.repository\\implementation\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B832A271-3F0A-4575-B2D7-65AF557DC623}|PetShop.Repository\\PetShop.Repository.csproj|solutionrelative:petshop.repository\\implementation\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{51FD3EE5-0542-40B9-9715-4CC5CB548F32}|PetShop.Domain\\PetShop.Domain.csproj|c:\\users\\elena\\desktop\\petadoptioncenter\\petshop.domain\\enum\\sizeofanimal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -95,16 +103,8 @@
       "RelativeMoniker": "D:0:0:{51FD3EE5-0542-40B9-9715-4CC5CB548F32}|PetShop.Domain\\PetShop.Domain.csproj|solutionrelative:petshop.domain\\entities\\shelter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B832A271-3F0A-4575-B2D7-65AF557DC623}|PetShop.Repository\\PetShop.Repository.csproj|c:\\users\\elena\\desktop\\petadoptioncenter\\petshop.repository\\interface\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B832A271-3F0A-4575-B2D7-65AF557DC623}|PetShop.Repository\\PetShop.Repository.csproj|solutionrelative:petshop.repository\\interface\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B832A271-3F0A-4575-B2D7-65AF557DC623}|PetShop.Repository\\PetShop.Repository.csproj|c:\\users\\elena\\desktop\\petadoptioncenter\\petshop.repository\\interface\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B832A271-3F0A-4575-B2D7-65AF557DC623}|PetShop.Repository\\PetShop.Repository.csproj|solutionrelative:petshop.repository\\interface\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|c:\\users\\elena\\desktop\\petadoptioncenter\\petshop.service\\mappers\\petmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|solutionrelative:petshop.service\\mappers\\petmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -114,37 +114,102 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PetMapper.cs",
+              "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Service\\Mappers\\PetMapper.cs",
+              "RelativeDocumentMoniker": "PetShop.Service\\Mappers\\PetMapper.cs",
+              "ToolTip": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Service\\Mappers\\PetMapper.cs",
+              "RelativeToolTip": "PetShop.Service\\Mappers\\PetMapper.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAADwv1oAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T20:16:08.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PetService.cs",
+              "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Service\\Implementation\\PetService.cs",
+              "RelativeDocumentMoniker": "PetShop.Service\\Implementation\\PetService.cs",
+              "ToolTip": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Service\\Implementation\\PetService.cs",
+              "RelativeToolTip": "PetShop.Service\\Implementation\\PetService.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAAwD4AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T15:54:13.526Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Web\\Views\\Pets\\Index.cshtml",
+              "RelativeDocumentMoniker": "PetShop.Web\\Views\\Pets\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Web\\Views\\Pets\\Index.cshtml",
+              "RelativeToolTip": "PetShop.Web\\Views\\Pets\\Index.cshtml",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAgwBUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-16T15:56:05.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PetsController.cs",
+              "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Web\\Controllers\\PetsController.cs",
+              "RelativeDocumentMoniker": "PetShop.Web\\Controllers\\PetsController.cs",
+              "ToolTip": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Web\\Controllers\\PetsController.cs",
+              "RelativeToolTip": "PetShop.Web\\Controllers\\PetsController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAwwDEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T15:52:14.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\.gitignore",
-              "RelativeToolTip": ".gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-18T17:52:24.533Z",
+              "Title": "IPetService.cs",
+              "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Service\\Interface\\IPetService.cs",
+              "RelativeDocumentMoniker": "PetShop.Service\\Interface\\IPetService.cs",
+              "ToolTip": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Service\\Interface\\IPetService.cs",
+              "RelativeToolTip": "PetShop.Service\\Interface\\IPetService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T15:54:03.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Repository\\Implementation\\Repository.cs",
+              "RelativeDocumentMoniker": "PetShop.Repository\\Implementation\\Repository.cs",
+              "ToolTip": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Repository\\Implementation\\Repository.cs",
+              "RelativeToolTip": "PetShop.Repository\\Implementation\\Repository.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowEQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T18:04:28.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Repository\\Interface\\IRepository.cs",
+              "RelativeDocumentMoniker": "PetShop.Repository\\Interface\\IRepository.cs",
+              "ToolTip": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Repository\\Interface\\IRepository.cs",
+              "RelativeToolTip": "PetShop.Repository\\Interface\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T19:51:32.415Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "AnimalType.cs",
-              "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Domain\\Enum\\AnimalType.cs",
-              "RelativeDocumentMoniker": "PetShop.Domain\\Enum\\AnimalType.cs",
-              "ToolTip": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Domain\\Enum\\AnimalType.cs",
-              "RelativeToolTip": "PetShop.Domain\\Enum\\AnimalType.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T17:36:01.98Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "SizeOfAnimal.cs",
               "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Domain\\Enum\\SizeOfAnimal.cs",
               "RelativeDocumentMoniker": "PetShop.Domain\\Enum\\SizeOfAnimal.cs",
@@ -157,20 +222,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Web\\Views\\Pets\\Index.cshtml",
-              "RelativeDocumentMoniker": "PetShop.Web\\Views\\Pets\\Index.cshtml",
-              "ToolTip": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Web\\Views\\Pets\\Index.cshtml",
-              "RelativeToolTip": "PetShop.Web\\Views\\Pets\\Index.cshtml",
-              "ViewState": "AgIAACAAAAAAAAAAAAAYwC4AAABoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-16T15:56:05.264Z",
+              "DocumentIndex": 7,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-12-18T17:52:24.533Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
+              "Title": "AnimalType.cs",
+              "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Domain\\Enum\\AnimalType.cs",
+              "RelativeDocumentMoniker": "PetShop.Domain\\Enum\\AnimalType.cs",
+              "ToolTip": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Domain\\Enum\\AnimalType.cs",
+              "RelativeToolTip": "PetShop.Domain\\Enum\\AnimalType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T17:36:01.98Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "GenderType.cs",
               "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Domain\\Enum\\GenderType.cs",
               "RelativeDocumentMoniker": "PetShop.Domain\\Enum\\GenderType.cs",
@@ -183,7 +261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "ShelterDTO.cs",
               "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Domain\\DTO\\ShelterDTO.cs",
               "RelativeDocumentMoniker": "PetShop.Domain\\DTO\\ShelterDTO.cs",
@@ -196,46 +274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IPetService.cs",
-              "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Service\\Interface\\IPetService.cs",
-              "RelativeDocumentMoniker": "PetShop.Service\\Interface\\IPetService.cs",
-              "ToolTip": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Service\\Interface\\IPetService.cs",
-              "RelativeToolTip": "PetShop.Service\\Interface\\IPetService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T15:54:03.99Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PetService.cs",
-              "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Service\\Implementation\\PetService.cs",
-              "RelativeDocumentMoniker": "PetShop.Service\\Implementation\\PetService.cs",
-              "ToolTip": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Service\\Implementation\\PetService.cs",
-              "RelativeToolTip": "PetShop.Service\\Implementation\\PetService.cs",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAswGQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T15:54:13.526Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PetsController.cs",
-              "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Web\\Controllers\\PetsController.cs",
-              "RelativeDocumentMoniker": "PetShop.Web\\Controllers\\PetsController.cs",
-              "ToolTip": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Web\\Controllers\\PetsController.cs",
-              "RelativeToolTip": "PetShop.Web\\Controllers\\PetsController.cs",
-              "ViewState": "AgIAAKYAAAAAAAAAAAAAwH4AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T15:52:14.638Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "IGenericCRUDService.cs",
               "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Service\\Interface\\IGenericCRUDService.cs",
               "RelativeDocumentMoniker": "PetShop.Service\\Interface\\IGenericCRUDService.cs",
@@ -248,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "RequestPetDTO.cs",
               "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Domain\\DTO\\RequestPetDTO.cs",
               "RelativeDocumentMoniker": "PetShop.Domain\\DTO\\RequestPetDTO.cs",
@@ -261,20 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Repository\\Implementation\\Repository.cs",
-              "RelativeDocumentMoniker": "PetShop.Repository\\Implementation\\Repository.cs",
-              "ToolTip": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Repository\\Implementation\\Repository.cs",
-              "RelativeToolTip": "PetShop.Repository\\Implementation\\Repository.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAhwCEAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T18:04:28.449Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "ResponsePetDTO.cs",
               "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Domain\\DTO\\ResponsePetDTO.cs",
               "RelativeDocumentMoniker": "PetShop.Domain\\DTO\\ResponsePetDTO.cs",
@@ -287,7 +313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "20241203192701_init.cs",
               "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Repository\\Migrations\\20241203192701_init.cs",
               "RelativeDocumentMoniker": "PetShop.Repository\\Migrations\\20241203192701_init.cs",
@@ -300,7 +326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Web\\Views\\Pets\\Details.cshtml",
               "RelativeDocumentMoniker": "PetShop.Web\\Views\\Pets\\Details.cshtml",
@@ -313,7 +339,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Web\\Views\\Pets\\Edit.cshtml",
               "RelativeDocumentMoniker": "PetShop.Web\\Views\\Pets\\Edit.cshtml",
@@ -326,7 +352,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Web\\Views\\Pets\\Delete.cshtml",
               "RelativeDocumentMoniker": "PetShop.Web\\Views\\Pets\\Delete.cshtml",
@@ -339,7 +365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Web\\Views\\Pets\\Create.cshtml",
               "RelativeDocumentMoniker": "PetShop.Web\\Views\\Pets\\Create.cshtml",
@@ -352,7 +378,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "ShelterMapper.cs",
               "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Service\\Mappers\\ShelterMapper.cs",
               "RelativeDocumentMoniker": "PetShop.Service\\Mappers\\ShelterMapper.cs",
@@ -365,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Repository\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "PetShop.Repository\\ApplicationDbContext.cs",
@@ -378,7 +404,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "ShelterService.cs",
               "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Service\\Implementation\\ShelterService.cs",
               "RelativeDocumentMoniker": "PetShop.Service\\Implementation\\ShelterService.cs",
@@ -391,7 +417,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "BaseEntity.cs",
               "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Domain\\Entities\\BaseEntity.cs",
               "RelativeDocumentMoniker": "PetShop.Domain\\Entities\\BaseEntity.cs",
@@ -404,7 +430,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "Shelter.cs",
               "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Domain\\Entities\\Shelter.cs",
               "RelativeDocumentMoniker": "PetShop.Domain\\Entities\\Shelter.cs",
@@ -417,19 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Repository\\Interface\\IRepository.cs",
-              "RelativeDocumentMoniker": "PetShop.Repository\\Interface\\IRepository.cs",
-              "ToolTip": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Repository\\Interface\\IRepository.cs",
-              "RelativeToolTip": "PetShop.Repository\\Interface\\IRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T19:51:32.415Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Repository\\Interface\\IUserRepository.cs",
               "RelativeDocumentMoniker": "PetShop.Repository\\Interface\\IUserRepository.cs",
@@ -438,18 +452,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-16T19:48:21.789Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "PetMapper.cs",
-              "DocumentMoniker": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Service\\Mappers\\PetMapper.cs",
-              "RelativeDocumentMoniker": "PetShop.Service\\Mappers\\PetMapper.cs",
-              "ToolTip": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Service\\Mappers\\PetMapper.cs",
-              "RelativeToolTip": "PetShop.Service\\Mappers\\PetMapper.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAwwDQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T15:54:02.583Z"
             }
           ]
         }
