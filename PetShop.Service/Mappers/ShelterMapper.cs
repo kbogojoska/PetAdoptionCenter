@@ -14,6 +14,7 @@ namespace PetShop.Service.Mappers
         {
             return new ShelterDTO
             {
+                Id = shelter.Id,
                 City = shelter.City,
                 Name = shelter.Name,
                 Address = shelter.Address,

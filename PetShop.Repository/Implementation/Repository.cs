@@ -30,8 +30,10 @@ namespace PetShop.Repository.Implementation
 
         public T Get(Guid? id)
         {
-            var strId = id.ToString();
-            return _entities.First(s => s.Id == id);
+            //var strId = id.ToString();
+            if (id == null) return null;
+            return _entities.FirstOrDefault(s => s.Id == id.Value);
+
         }
 
         public IEnumerable<T> GetAll()

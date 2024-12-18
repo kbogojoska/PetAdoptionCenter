@@ -412,12 +412,17 @@ namespace PetShop.Repository.Migrations
             modelBuilder.Entity("PetShop.Domain.Entities.Pet", b =>
                 {
                     b.HasOne("PetShop.Domain.Entities.Shelter", "ShelterOfResidence")
-                        .WithMany()
+                        .WithMany("Pets")
                         .HasForeignKey("ShelterOfResidenceId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("ShelterOfResidence");
+                });
+
+            modelBuilder.Entity("PetShop.Domain.Entities.Shelter", b =>
+                {
+                    b.Navigation("Pets");
                 });
 #pragma warning restore 612, 618
         }

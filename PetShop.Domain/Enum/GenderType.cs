@@ -9,6 +9,6 @@ namespace PetShop.Domain.Enum
     public enum GenderType
     {
         MALE,
-        FEMALE
+        FEMALE 
     }
 }

@@ -11,13 +11,13 @@ namespace PetShop.Service.Mappers
 {
     public static class PetMapper
     {
-        public static PetDTO toPetDTO(this Pet pet)
+        public static ResponsePetDTO toResponsePetDto(this Pet pet)
         {
-            return new PetDTO
+            return new ResponsePetDTO
             {
                 Name = pet.Name,
                 Weight = pet.Weight,
-                Size = pet.Size ?? SizeOfAnimal.UNDISCLOSED,
+                Size = pet.Size,
                 Age = pet.Age,
                 Gender = pet.Gender,
                 Breed = pet.Breed ?? "",
@@ -27,7 +27,28 @@ namespace PetShop.Service.Mappers
                 ImageURL = pet.ImageURL,
                 PriceForAdoption = pet.PriceForAdoption,
                 isAvailable = pet.isAvailable,
-                ShelterOfResidenceId = pet.ShelterOfResidence.Id
+                ShelterOfResidenceId = pet.ShelterOfResidence?.Id ?? Guid.Empty
+            };
+        }
+
+        public static RequestPetDTO toRequestPetDto(this Pet pet)
+        {
+            return new RequestPetDTO
+            {
+                Id = pet.Id,
+                Name = pet.Name,
+                Weight = pet.Weight,
+                Size = pet.Size,
+                Age = pet.Age,
+                Gender = pet.Gender,
+                Breed = pet.Breed,
+                About = pet.About,
+                Type = pet.Type,
+                HealthInformation = pet.HealthInformation,
+                ImageURL = pet.ImageURL,
+                PriceForAdoption = pet.PriceForAdoption,
+                isAvailable = pet.isAvailable,
+                ShelterOfResidenceId = pet.ShelterOfResidence?.Id ?? Guid.Empty
             };
         }
     }
