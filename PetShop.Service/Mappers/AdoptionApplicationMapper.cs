@@ -1,5 +1,6 @@
 ﻿using PetShop.Domain.DTO;
 using PetShop.Domain.Entities;
+using PetShop.Domain.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,34 @@ namespace PetShop.Service.Mappers
             {
                 ApplicantId = adoptionApplication.Applicant.Id,
                 PetId = adoptionApplication.Pet.Id,
-                isValid = adoptionApplication.isValid,
+                IsValid = adoptionApplication.IsValid,
                 ApplicationDate = adoptionApplication.ApplicationDate,
-                sumOfAdoptionFee = adoptionApplication.sumOfAdoptionFee
+                SumOfAdoptionFee = adoptionApplication.SumOfAdoptionFee
+            };
+        }
+
+        public static AdoptionApplication updateAdopApp(this AdoptionApplication application, AdoptionApplicationDTO adoptionApplicationDTO, PetShopApplicationUser user, Pet pet)
+        {
+            application.Applicant = user;
+            application.Pet = pet;
+            application.PetId = adoptionApplicationDTO.PetId;
+            application.IsValid = adoptionApplicationDTO.IsValid;
+            application.ApplicationDate = adoptionApplicationDTO.ApplicationDate;
+            application.SumOfAdoptionFee = adoptionApplicationDTO.SumOfAdoptionFee;
+
+            return application;
+        }
+
+        public static AdoptionApplication toAdopApp(this AdoptionApplicationDTO adoptionApplicationDTO, PetShopApplicationUser applicant, Pet pet)
+        {
+            return new AdoptionApplication
+            {
+                Applicant = applicant,
+                PetId = adoptionApplicationDTO.PetId,
+                Pet = pet,
+                IsValid = adoptionApplicationDTO.IsValid,
+                ApplicationDate = adoptionApplicationDTO.ApplicationDate,
+                SumOfAdoptionFee = adoptionApplicationDTO.SumOfAdoptionFee
             };
         }
     }

@@ -12,8 +12,8 @@ namespace PetShop.Domain.DTO
     {
         public string? ApplicantId { get; set; }
         public Guid PetId { get; set; }
-        public bool isValid { get; set; } = false;
-        public DateTime ApplicationDate = DateTime.UtcNow;
-        public double sumOfAdoptionFee { get; set; }
+        public bool IsValid { get; set; } = false;
+        public DateTime ApplicationDate { get; set; } = DateTime.UtcNow;
+        public double SumOfAdoptionFee { get; set; }
     }
 }

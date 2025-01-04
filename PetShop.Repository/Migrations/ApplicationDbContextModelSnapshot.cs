@@ -169,13 +169,16 @@ namespace PetShop.Repository.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<DateTime>("ApplicationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsValid")
+                        .HasColumnType("bit");
+
                     b.Property<Guid>("PetId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<bool>("isValid")
-                        .HasColumnType("bit");
-
-                    b.Property<double>("sumOfAdoptionFee")
+                    b.Property<double>("SumOfAdoptionFee")
                         .HasColumnType("float");
 
                     b.HasKey("Id");
@@ -222,7 +225,7 @@ namespace PetShop.Repository.Migrations
                     b.Property<Guid>("ShelterOfResidenceId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int?>("Size")
+                    b.Property<int>("Size")
                         .HasColumnType("int");
 
                     b.Property<int>("Type")
@@ -282,8 +285,23 @@ namespace PetShop.Repository.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CityOfResidence")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactPhoneNumber")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -298,6 +316,10 @@ namespace PetShop.Repository.Migrations
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
@@ -317,6 +339,10 @@ namespace PetShop.Repository.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("TwoFactorEnabled")

@@ -14,9 +14,7 @@
         <p class="fs-6">
             On this page, you'll be able to see all the shelters we have available, where you can adopt your future furry friend.<br />
             Here you'll find information about each shelter, including their contact details and location. Feel free to reach out to us if you need more information!
-
         </p>
-        
     </div>
 
     <!-- Button to Create New Shelter -->
@@ -27,44 +25,47 @@
     </div>
 
     <!-- Shelter Table -->
-    <table class="table table-hover table-striped mt-3">
-        <thead class="table-dark">
-            <tr>
-                <th>@Html.DisplayNameFor(model => model.City)</th>
-                <th>@Html.DisplayNameFor(model => model.Name)</th>
-                <th>@Html.DisplayNameFor(model => model.Address)</th>
-                <th>@Html.DisplayNameFor(model => model.Capacity)</th>
-                <th>@Html.DisplayNameFor(model => model.AvailableSpaces)</th>
-                <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+    <div class="table-responsive">
+        <table class="table table-hover table-striped mt-3">
+            <thead class="table-dark">
                 <tr>
-                    <td>@Html.DisplayFor(modelItem => item.City)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Address)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Capacity)</td>
-                    <td>@Html.DisplayFor(modelItem => item.AvailableSpaces)</td>
-                    <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">
-                            <i class="bi bi-pencil-square"></i> Edit
-                        </a>
-                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">
-                            <i class="bi bi-info-circle"></i> Details
-                        </a>
-                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">
-                            <i class="bi bi-trash"></i> Delete
-                        </a>
-                    </td>
+                    <th>@Html.DisplayNameFor(model => model.City)</th>
+                    <th>@Html.DisplayNameFor(model => model.Name)</th>
+                    <th>@Html.DisplayNameFor(model => model.Address)</th>
+                    <th>@Html.DisplayNameFor(model => model.Capacity)</th>
+                    <th>@Html.DisplayNameFor(model => model.AvailableSpaces)</th>
+                    <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
+                    <th>Actions</th>
                 </tr>
-            }
-        </tbody>
-    </table>
-    <p class="fs-5=7 text-muted mt-3">
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.City)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Capacity)</td>
+                        <td>@Html.DisplayFor(modelItem => item.AvailableSpaces)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">
+                                <i class="bi bi-pencil-square"></i> Edit
+                            </a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">
+                                <i class="bi bi-info-circle"></i> Details
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">
+                                <i class="bi bi-trash"></i> Delete
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <p class="fs-5 text-muted mt-3">
         <br />
         Interested in meeting the adorable pets waiting for their forever homes? Head over to the <strong>Pets</strong> section from the menu!
     </p>

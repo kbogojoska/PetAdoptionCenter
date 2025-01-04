@@ -11,12 +11,21 @@ namespace PetShop.Domain.Identity
     public class PetShopApplicationUser : IdentityUser
     {
         [Required]
-        public string? Name;
+        public string? Name { get; set; }
+
         [Required]
-        public string? Surname;
+        public string? Surname { get; set; }
+
         [Required]
-        public int Age;
+        public int Age { get; set; }
+
         [Required]
-        public string? ContactPhoneNumber;
+        public string? ContactPhoneNumber { get; set; }
+
+        [Required]
+        public string? CityOfResidence { get; set; }
+
+        [Required]
+        public string? Address { get; set; }
     }
 }

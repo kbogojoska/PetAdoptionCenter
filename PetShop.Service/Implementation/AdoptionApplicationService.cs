@@ -1,39 +1,61 @@
 ﻿using PetShop.Domain.DTO;
+using PetShop.Domain.Entities;
+using PetShop.Domain.Identity;
+using PetShop.Repository.Interface;
 using PetShop.Service.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PetShop.Service.Mappers;
 
-namespace PetShop.Service.Implementation
+public class AdoptionApplicationService : IAdoptionApplicationService
 {
-    public class AdoptionApplicationService : IAdoptionApplicationService
+    protected readonly IRepository<Pet> petRepository;
+    protected readonly IRepository<AdoptionApplication> _repository;
+    protected readonly IUserRepository userRepository;
+
+    public AdoptionApplicationService(IRepository<Pet> petRepository,
+        IUserRepository userRepository,
+        IRepository<AdoptionApplication> repository)
     {
-        public AdoptionApplicationDTO DeleteById(string id)
-        {
+        this.userRepository = userRepository;
+        this.petRepository = petRepository;
+        _repository = repository;
+    }
 
-            throw new NotImplementedException();
-        }
+    public AdoptionApplicationDTO DeleteById(string id)
+    {
+        var application = _repository.Delete(Guid.Parse(id));
+     
+        return application.toDTO();
+    }
 
-        public List<AdoptionApplicationDTO> FindAll()
-        {
-            throw new NotImplementedException();
-        }
+    public List<AdoptionApplicationDTO> FindAll()
+    {
+        return _repository.GetAll().Select(a => a.toDTO()).ToList();
+    }
 
-        public AdoptionApplicationDTO FindById(string id)
-        {
-            throw new NotImplementedException();
-        }
+    public AdoptionApplicationDTO FindById(string id)
+    {
+        var application = _repository.Get(Guid.Parse(id)) ?? throw new Exception("Adoption application not found.");
 
-        public AdoptionApplicationDTO Store(AdoptionApplicationDTO tDto)
-        {
-            throw new NotImplementedException();
-        }
+        return application.toDTO();
+    }
 
-        public AdoptionApplicationDTO Update(string id, AdoptionApplicationDTO tDto)
-        {
-            throw new NotImplementedException();
-        }
+    public AdoptionApplicationDTO Store(AdoptionApplicationDTO appDTO)
+    {
+        var pet = petRepository.Get(appDTO.PetId) ?? throw new Exception("Pet not found.");
+		var user = userRepository.Get(appDTO.ApplicantId) ?? throw new Exception("Applicant not found.");
+		var application = appDTO.toAdopApp(user, pet);
+        _repository.Insert(application);
+        return application.toDTO();
+    }
+
+    public AdoptionApplicationDTO Update(string id, AdoptionApplicationDTO appDTO)
+    {
+		var application = _repository.Get(Guid.Parse(id)) ?? throw new Exception("Adoption application not found.");
+		var pet = petRepository.Get(appDTO.PetId) ?? throw new Exception("Pet not found.");
+		var user = userRepository.Get(appDTO.ApplicantId) ?? throw new Exception("Applicant not found.");
+
+		application.updateAdopApp(appDTO, user, pet);
+        _repository.Update(application);
+        return application.toDTO();
     }
 }

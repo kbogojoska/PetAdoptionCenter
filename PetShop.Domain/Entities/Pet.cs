@@ -17,13 +17,14 @@ namespace PetShop.Domain.Entities
         public double Weight { get; set; }
         public SizeOfAnimal Size {  get; set; }
         [Required]
-        public int Age {  get; set; }
+		[Range(0, 100)]
+		public int Age {  get; set; }
         [Required]
         public GenderType Gender {  get; set; }
         public string? Breed {  get; set; }
         public string? About {  get; set; }
         [Required]
-        public AnimalType Type {  get; set; } 
+        public AnimalType Type {  get; set; }
         public string? HealthInformation {  get; set; }
         [Required]
         public string? ImageURL {  get; set; }

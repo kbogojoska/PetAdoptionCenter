@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Repository\\PetShop.Repository.csproj": {}
+    "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Repository\\PetShop.Repository.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Domain\\PetShop.Domain.csproj": {
+    "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Domain\\PetShop.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Domain\\PetShop.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Domain\\PetShop.Domain.csproj",
         "projectName": "PetShop.Domain",
-        "projectPath": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Domain\\PetShop.Domain.csproj",
-        "packagesPath": "C:\\Users\\ELENA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Domain\\obj\\",
+        "projectPath": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Domain\\PetShop.Domain.csproj",
+        "packagesPath": "C:\\Users\\kater\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ELENA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kater\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -67,21 +66,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Repository\\PetShop.Repository.csproj": {
+    "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Repository\\PetShop.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Repository\\PetShop.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Repository\\PetShop.Repository.csproj",
         "projectName": "PetShop.Repository",
-        "projectPath": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Repository\\PetShop.Repository.csproj",
-        "packagesPath": "C:\\Users\\ELENA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Repository\\obj\\",
+        "projectPath": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Repository\\PetShop.Repository.csproj",
+        "packagesPath": "C:\\Users\\kater\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ELENA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kater\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -89,15 +88,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Domain\\PetShop.Domain.csproj": {
-                "projectPath": "C:\\Users\\ELENA\\Desktop\\PetAdoptionCenter\\PetShop.Domain\\PetShop.Domain.csproj"
+              "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Domain\\PetShop.Domain.csproj": {
+                "projectPath": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Domain\\PetShop.Domain.csproj"
               }
             }
           }
@@ -146,7 +144,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

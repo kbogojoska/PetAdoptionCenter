@@ -24,8 +24,11 @@ namespace PetShop.Service.Implementation
         }
         public ResponsePetDTO DeleteById(Guid id)
         {
-           Pet pet = petRepository.Delete(id);
-           return pet.toResponsePetDto();
+            var shelter = shelterRepository.Get(FindById(id).ShelterOfResidenceId) ?? throw new Exception("Shelter not found.");
+            shelter.AvailableSpaces = shelter.AvailableSpaces + 1;
+            Pet pet = petRepository.Delete(id);
+
+            return pet.toResponsePetDto();
         }
 
         public List<RequestPetDTO> FindAll()
@@ -36,7 +39,7 @@ namespace PetShop.Service.Implementation
         }
 
 
-        public RequestPetDTO  FindById(Guid id)
+        public RequestPetDTO FindById(Guid id)
         {
             var pet = petRepository.Get(id) ?? throw new Exception("Pet not found.");
             return pet.toRequestPetDto();
@@ -48,22 +51,40 @@ namespace PetShop.Service.Implementation
             {
                 throw new ArgumentException("Invalid shelter ID.");
             }
+
             var pets = petRepository.FindBy(p => p.ShelterOfResidenceId == shelterId);
+
+
             return pets.Select(pet => pet.toRequestPetDto()).ToList();
         }
 
-        public ResponsePetDTO Store(RequestPetDTO requestPetDto)
+        public List<RequestPetDTO> FindByCity(string city)
         {
+            if (city == null)
+            {
+                throw new ArgumentException("Invalid search by city.");
+            }
 
+            var petsToReturn = petRepository.GetAll().Where(p => p.ShelterOfResidence.City == city).ToList();
+            return petsToReturn.Select(pet => pet.toRequestPetDto()).ToList();
+
+        }
+
+        public ResponsePetDTO Store(RequestPetDTO requestPetDto) // add the pet in the shelter list too
+        {
             var shelter = shelterRepository.Get(requestPetDto.ShelterOfResidenceId) ?? throw new Exception("Shelter not found.");
             Pet pet = requestPetDto.ToPet(shelter);
-
-            petRepository.Insert(pet);
+            shelter.AvailableSpaces = shelter.AvailableSpaces - 1;
+			if (shelter.Pets == null)
+			{
+				shelter.Pets = new HashSet<Pet>();
+			}
+			shelter.Pets.Add(pet); petRepository.Insert(pet);
 
             return pet.toResponsePetDto();
         }
 
-      
+
 
         public ResponsePetDTO Update(Guid id, RequestPetDTO requestPetDto)
         {
@@ -80,6 +101,6 @@ namespace PetShop.Service.Implementation
             return pet.toResponsePetDto();
         }
 
-        
+
     }
 }

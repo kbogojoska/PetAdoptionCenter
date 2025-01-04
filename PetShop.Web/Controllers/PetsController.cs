@@ -28,18 +28,31 @@ namespace PetShop.Web.Controllers
         }
 
         // GET: Pets
-        public IActionResult Index(Guid? shelterId)
+        public IActionResult Index(Guid? shelterId, string? city=null)
         {
             var shelters = _shelterService.FindAll();
+
+            var cities = shelters.Select(s => s.City).Distinct().ToList();
             ViewData["Shelters"] = shelters; // Populate shelters for the dropdown filter
+            ViewData["Cities"] = cities;
 
-            List<RequestPetDTO> pets;
+			List<RequestPetDTO> pets;
 
-            if (shelterId.HasValue)
+            if (shelterId.HasValue && city!=null)
             {
                 pets = _petService.FindByShelter(shelterId.Value); // Get pets for the selected shelter
                 ViewData["SelectedShelterId"] = shelterId.Value;  // Track the selected shelter in the view
             }
+            else if(shelterId.HasValue)
+            {
+                pets = _petService.FindByShelter(shelterId.Value); // Get pets for the selected shelter
+                ViewData["SelectedShelterId"] = shelterId.Value;
+            }
+            else if(city!=null)
+            {
+                pets = _petService.FindByCity(city); // Get pets for the selected shelter
+				ViewData["SelectedCity"] = city;
+			}
             else
             {
                 pets = _petService.FindAll(); // Get all pets if no shelter is selected
@@ -202,6 +215,17 @@ namespace PetShop.Web.Controllers
         private bool PetExists(Guid id)
         {
             return _context.Pets.Any(e => e.Id == id);
+        }
+
+        public async Task<IActionResult> Adopt(Guid id)
+        {
+            var pet = _petService.FindById(id);
+            if (pet != null)
+            {
+                return RedirectToAction(nameof(AdoptionApplicationsController.Create), "AdoptionApplications", new { petId = id });
+            }
+
+            return NotFound();
         }
     }
 }

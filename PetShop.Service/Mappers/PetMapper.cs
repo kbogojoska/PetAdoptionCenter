@@ -27,7 +27,7 @@ namespace PetShop.Service.Mappers
                 ImageURL = pet.ImageURL,
                 PriceForAdoption = pet.PriceForAdoption,
                 isAvailable = pet.isAvailable,
-                ShelterOfResidenceId = pet.ShelterOfResidence?.Id ?? Guid.Empty
+                ShelterOfResidenceId = pet.ShelterOfResidenceId
             };
         }
 
@@ -48,7 +48,7 @@ namespace PetShop.Service.Mappers
                 ImageURL = pet.ImageURL,
                 PriceForAdoption = pet.PriceForAdoption,
                 isAvailable = pet.isAvailable,
-                ShelterOfResidenceId = pet.ShelterOfResidence?.Id ?? Guid.Empty
+                ShelterOfResidenceId = pet.ShelterOfResidenceId
             };
         }
 
@@ -69,6 +69,7 @@ namespace PetShop.Service.Mappers
             pet.ShelterOfResidence = shelter;
         }
 
+        // for requestDTO
         public static Pet ToPet(this RequestPetDTO requestDto, Shelter shelter)
         {
             return new Pet
@@ -85,7 +86,39 @@ namespace PetShop.Service.Mappers
                 ImageURL = requestDto.ImageURL,
                 PriceForAdoption = requestDto.PriceForAdoption,
                 isAvailable = requestDto.isAvailable,
-                ShelterOfResidence = shelter
+                ShelterOfResidence = shelter,
+                ShelterOfResidenceId = shelter.Id
+            };
+        }
+
+        // for responseDTO
+        public static Pet ToPet(this ResponsePetDTO dto, Shelter shelter)
+        {
+            if (dto == null)
+            {
+                throw new ArgumentNullException(nameof(dto), "ResponsePetDTO cannot be null");
+            }
+            if (shelter == null)
+            {
+                throw new ArgumentNullException(nameof(shelter), "Shelter cannot be null");
+            }
+
+            return new Pet
+            {
+                Name = dto.Name,
+                Weight = dto.Weight,
+                Size = dto.Size,
+                Age = dto.Age,
+                Gender = dto.Gender,
+                Breed = dto.Breed,
+                About = dto.About,
+                Type = dto.Type,
+                HealthInformation = dto.HealthInformation,
+                ImageURL = dto.ImageURL,
+                PriceForAdoption = dto.PriceForAdoption,
+                isAvailable = dto.isAvailable,
+                ShelterOfResidence = shelter,
+                ShelterOfResidenceId = shelter.Id 
             };
         }
 

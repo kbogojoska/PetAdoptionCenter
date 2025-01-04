@@ -601,10 +601,7 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.2"
         },
         "runtime": {
-          "PetShop.Domain.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "PetShop.Domain.dll": {}
         }
       }
     }

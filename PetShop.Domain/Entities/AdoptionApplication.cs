@@ -16,11 +16,11 @@ namespace PetShop.Domain.Entities
         public Guid PetId { get; set; }
         [Required]
         public required Pet Pet { get; set; }
-        public bool isValid { get; set; } = false;
+        public bool IsValid { get; set; } = false;
         [Required]
-        public DateTime ApplicationDate = DateTime.UtcNow;
+        public DateTime ApplicationDate { get; set; } = DateTime.UtcNow;
         [Required]
-        public double sumOfAdoptionFee { get; set; }
+        public double SumOfAdoptionFee { get; set; }
         // public string? DocumentPath { get; set; }
 
         public bool IsValidApplication()
@@ -30,7 +30,7 @@ namespace PetShop.Domain.Entities
 
         public override string? ToString()
         {
-            return $"Application ID: {Id}, Applicant: {Applicant.Name} {Applicant.Surname}, Pet: {Pet.Name}, Fee: {sumOfAdoptionFee:C}, Date: {ApplicationDate}";
+            return $"Application ID: {Id}, Applicant: {Applicant.Name} {Applicant.Surname}, Pet: {Pet.Name}, Fee: {SumOfAdoptionFee:C}, Date: {ApplicationDate}";
         }
 
     }

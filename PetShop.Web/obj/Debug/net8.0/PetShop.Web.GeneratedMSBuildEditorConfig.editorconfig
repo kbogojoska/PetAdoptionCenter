@@ -17,87 +17,155 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PetShop.Web
 build_property.RootNamespace = PetShop.Web
-build_property.ProjectDir = C:\Users\ELENA\Desktop\PetAdoptionCenter\PetShop.Web\
+build_property.ProjectDir = C:\Users\kater\Desktop\Faks\6_semestar\IS\seminarska-IS\PetShopApp\PetShop.Web\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\ELENA\Desktop\PetAdoptionCenter\PetShop.Web
+build_property.MSBuildProjectDirectory = C:\Users\kater\Desktop\Faks\6_semestar\IS\seminarska-IS\PetShopApp\PetShop.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/ELENA/Desktop/PetAdoptionCenter/PetShop.Web/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUGVyc29uYWxEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1N0YXR1c01lc3NhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ELENA/Desktop/PetAdoptionCenter/PetShop.Web/Views/Home/Index.cshtml]
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/AdoptionApplications/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcHRpb25BcHBsaWNhdGlvbnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/AdoptionApplications/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcHRpb25BcHBsaWNhdGlvbnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/AdoptionApplications/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcHRpb25BcHBsaWNhdGlvbnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/AdoptionApplications/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcHRpb25BcHBsaWNhdGlvbnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/AdoptionApplications/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcHRpb25BcHBsaWNhdGlvbnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ELENA/Desktop/PetAdoptionCenter/PetShop.Web/Views/Home/Privacy.cshtml]
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ELENA/Desktop/PetAdoptionCenter/PetShop.Web/Views/Pets/Create.cshtml]
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/Pets/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGV0c1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ELENA/Desktop/PetAdoptionCenter/PetShop.Web/Views/Pets/Delete.cshtml]
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/Pets/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGV0c1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ELENA/Desktop/PetAdoptionCenter/PetShop.Web/Views/Pets/Details.cshtml]
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/Pets/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGV0c1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ELENA/Desktop/PetAdoptionCenter/PetShop.Web/Views/Pets/Edit.cshtml]
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/Pets/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGV0c1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ELENA/Desktop/PetAdoptionCenter/PetShop.Web/Views/Pets/Index.cshtml]
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/Pets/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGV0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ELENA/Desktop/PetAdoptionCenter/PetShop.Web/Views/Shared/Error.cshtml]
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ELENA/Desktop/PetAdoptionCenter/PetShop.Web/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ELENA/Desktop/PetAdoptionCenter/PetShop.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ELENA/Desktop/PetAdoptionCenter/PetShop.Web/Views/Shelters/Create.cshtml]
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/Shelters/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hlbHRlcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ELENA/Desktop/PetAdoptionCenter/PetShop.Web/Views/Shelters/Delete.cshtml]
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/Shelters/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hlbHRlcnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ELENA/Desktop/PetAdoptionCenter/PetShop.Web/Views/Shelters/Details.cshtml]
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/Shelters/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hlbHRlcnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ELENA/Desktop/PetAdoptionCenter/PetShop.Web/Views/Shelters/Edit.cshtml]
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/Shelters/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hlbHRlcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ELENA/Desktop/PetAdoptionCenter/PetShop.Web/Views/Shelters/Index.cshtml]
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/Shelters/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hlbHRlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ELENA/Desktop/PetAdoptionCenter/PetShop.Web/Views/_ViewImports.cshtml]
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ELENA/Desktop/PetAdoptionCenter/PetShop.Web/Views/_ViewStart.cshtml]
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ELENA/Desktop/PetAdoptionCenter/PetShop.Web/Views/Shared/_Layout.cshtml]
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShop.Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-9q8zna87su

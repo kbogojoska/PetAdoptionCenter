@@ -22,5 +22,10 @@ namespace PetShop.Domain.Entities
         [Required]
         public string? PhoneNumber { get; set; }
         public virtual ICollection<Pet>? Pets { get; set; }
-    }
+
+		public Shelter()
+		{
+			Pets = new HashSet<Pet>();
+		}
+	}
 }
