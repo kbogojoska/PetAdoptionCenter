@@ -1,4 +1,4 @@
-﻿@model PetShop.Domain.Entities.Shelter
+﻿@model PetShop.Domain.DTO.ShelterDTO
 
 @{
     ViewData["Title"] = "Shelter Details";
@@ -6,7 +6,6 @@
 }
 
 <div class="container mt-4">
-
     <h1 class="text-center mb-4">Shelter Details</h1>
 
     <div class="card shadow-sm">
@@ -31,6 +30,43 @@
                 <dd class="col-sm-8">@Model.PhoneNumber</dd>
             </dl>
         </div>
+    </div>
+
+    <div class="mt-4">
+        <h3>Pets in shelter</h3>
+        @if (Model.Pets != null && Model.Pets.Any())
+        {
+            <div class="row">
+                @foreach (var pet in Model.Pets)
+                {
+                    <div class="col-md-3 mb-4">
+                        <div class="card shadow-sm" style="height: 100%; border-radius: 12px;">
+                            <img src="@pet.ImageURL" class="card-img-top" alt="@pet.Name" style="height: 200px; object-fit: cover;">
+                            <div class="card-body d-flex flex-column justify-content-between text-center gap-2">
+                                <h5 class="card-title">@pet.Name
+                                <hr/>
+                                </h5>
+                                <p class="card-text"><strong>Breed:</strong> @pet.Breed</p>
+                                <p class="card-text"><strong>Age:</strong> @pet.Age years</p>
+                                <p class="card-text"><strong>Gender:</strong> @pet.Gender</p>
+                                <p class="card-text @((!pet.isAvailable) ? "mb-5" : "")"><strong>Price:</strong> $@pet.PriceForAdoption</p>
+
+                                @if (pet.isAvailable == true)
+                                {
+                                    <a asp-controller="Pets" asp-action="Adopt" asp-route-id="@pet.Id" class="btn btn-success btn-sm rounded-pill mt-3">
+                                        <i class="bi bi-heart"></i> Adopt
+                                    </a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <p>No pets available for adoption at the moment.</p>
+        }
     </div>
 
     <div class="mt-4 text-center">

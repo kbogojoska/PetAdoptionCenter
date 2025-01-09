@@ -42,7 +42,8 @@ public class AdoptionApplicationService : IAdoptionApplicationService
     public AdoptionApplicationDTO Store(AdoptionApplicationDTO appDTO)
     {
         var pet = petRepository.Get(appDTO.PetId) ?? throw new Exception("Pet not found.");
-		var user = userRepository.Get(appDTO.ApplicantId) ?? throw new Exception("Applicant not found.");
+		
+        var user = userRepository.Get(appDTO.ApplicantId) ?? throw new Exception("Applicant not found.");
 		var application = appDTO.toAdopApp(user, pet);
         _repository.Insert(application);
         return application.toDTO();
@@ -51,7 +52,7 @@ public class AdoptionApplicationService : IAdoptionApplicationService
     public AdoptionApplicationDTO Update(string id, AdoptionApplicationDTO appDTO)
     {
 		var application = _repository.Get(Guid.Parse(id)) ?? throw new Exception("Adoption application not found.");
-		var pet = petRepository.Get(appDTO.PetId) ?? throw new Exception("Pet not found.");
+        var pet = petRepository.Get(appDTO.PetId) ?? throw new Exception("Pet not found.");
 		var user = userRepository.Get(appDTO.ApplicantId) ?? throw new Exception("Applicant not found.");
 
 		application.updateAdopApp(appDTO, user, pet);

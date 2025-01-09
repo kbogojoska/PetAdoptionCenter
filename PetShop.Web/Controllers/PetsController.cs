@@ -11,6 +11,7 @@ using PetShop.Domain.Enum;
 using PetShop.Repository;
 using PetShop.Service.Implementation;
 using PetShop.Service.Interface;
+using PetShop.Service.Mappers;
 
 namespace PetShop.Web.Controllers
 {
@@ -80,7 +81,7 @@ namespace PetShop.Web.Controllers
         public IActionResult Create()
         {
             
-            var shelters = _context.Shelters.ToList();
+            var shelters = _shelterService.FindAll();
             var sizes = Enum.GetValues(typeof(SizeOfAnimal)).Cast<SizeOfAnimal>().ToList();
             var animalTypes = Enum.GetValues(typeof(AnimalType)).Cast<AnimalType>().ToList();
             var genders = Enum.GetValues(typeof(GenderType)).Cast<GenderType>().ToList();
@@ -100,15 +101,28 @@ namespace PetShop.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(RequestPetDTO requestPetDto)
         {
+            var shelters = _shelterService.FindAll();
+            var sizes = Enum.GetValues(typeof(SizeOfAnimal)).Cast<SizeOfAnimal>().ToList();
+            var animalTypes = Enum.GetValues(typeof(AnimalType)).Cast<AnimalType>().ToList();
+            var genders = Enum.GetValues(typeof(GenderType)).Cast<GenderType>().ToList();
+
+            ViewData["Shelters"] = shelters;
+            ViewData["Sizes"] = sizes;
+            ViewData["AnimalTypes"] = animalTypes;
+            ViewData["Genders"] = genders;
+
             if (!ModelState.IsValid)
             {
-                ViewData["Shelters"] = _shelterService.FindAll();
                 return View(requestPetDto);
             }
 
             try
             {
                 var createdPet = _petService.Store(requestPetDto);
+                //var shelter = _shelterService.FindById(createdPet.ShelterOfResidenceId.ToString());
+                //shelter.Pets.Add(createdPet.ToPet(shelter.toShelter()));
+                //_shelterService.Update(shelter.Id.ToString(), shelter);
+
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
@@ -207,10 +221,10 @@ namespace PetShop.Web.Controllers
             return NotFound();
         }
 
-        private bool PetExists(Guid id)
+        /*private bool PetExists(Guid id)
         {
             return _context.Pets.Any(e => e.Id == id);
-        }
+        }*/
 
         public async Task<IActionResult> Adopt(Guid id)
         {

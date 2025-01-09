@@ -28,17 +28,28 @@ namespace PetShop.Repository.Implementation
             return instance;
         }
 
-        public T Get(Guid? id)
+        public T Get(Guid? id, Func<IQueryable<T>, IQueryable<T>> include = null)
         {
-            //var strId = id.ToString();
-            if (id == null) return null;
-            return _entities.FirstOrDefault(s => s.Id == id.Value);
+            IQueryable<T> query = _entities;
 
+            if (include != null)
+            {
+                query = include(query); 
+            }
+
+            return id == null ? null : query.FirstOrDefault(s => s.Id == id.Value);
         }
 
-        public IEnumerable<T> GetAll()
+        public IEnumerable<T> GetAll(Func<IQueryable<T>, IQueryable<T>> include = null)
         {
-            return _entities.AsEnumerable();
+            IQueryable<T> query = _entities;
+
+            if (include != null)
+            {
+                query = include(query); 
+            }
+
+            return query.AsEnumerable();
         }
 
         public T Insert(T entity)

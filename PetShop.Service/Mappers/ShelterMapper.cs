@@ -18,11 +18,11 @@ namespace PetShop.Service.Mappers
                 throw new ArgumentNullException(nameof(shelter), "Shelter cannot be null");
             }
 
-			var pets = new List<ResponsePetDTO>();
+			var pets = new List<Pet>();
 
 			if (!shelter.Pets.IsNullOrEmpty())
             {
-				pets = shelter.Pets.Select(p => p.toResponsePetDto()).ToList();
+				pets = shelter.Pets.Select(p => p).ToList();
 			}
 
 
@@ -56,7 +56,7 @@ namespace PetShop.Service.Mappers
             shelter.Capacity = shelterDTO.Capacity;
             shelter.AvailableSpaces = shelterDTO.AvailableSpaces;
             shelter.PhoneNumber = shelterDTO.PhoneNumber;
-            shelter.Pets = shelterDTO.Pets.Select(p => p.ToPet(shelter)).ToList();
+            shelter.Pets = shelterDTO.Pets.Select(p => p).ToList();
             return shelter;            
         }
 
@@ -78,7 +78,7 @@ namespace PetShop.Service.Mappers
                 PhoneNumber = shelterDto.PhoneNumber,
             };
 
-            shelter.Pets = shelterDto.Pets?.Select(dto => dto.ToPet(shelter)).ToList();
+            shelter.Pets = shelterDto.Pets?.Select(p => p).ToList();
 
             return shelter;
         }

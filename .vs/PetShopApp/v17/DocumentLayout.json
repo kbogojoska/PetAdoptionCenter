@@ -3,28 +3,120 @@
   "WorkspaceRootPath": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.web\\controllers\\adoptionapplicationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|solutionrelative:petshop.web\\controllers\\adoptionapplicationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B832A271-3F0A-4575-B2D7-65AF557DC623}|PetShop.Repository\\PetShop.Repository.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.repository\\implementation\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B832A271-3F0A-4575-B2D7-65AF557DC623}|PetShop.Repository\\PetShop.Repository.csproj|solutionrelative:petshop.repository\\implementation\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.service\\implementation\\adoptionapplicationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|solutionrelative:petshop.service\\implementation\\adoptionapplicationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.web\\views\\adoptionapplications\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|solutionrelative:petshop.web\\views\\adoptionapplications\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.web\\controllers\\petscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|solutionrelative:petshop.web\\controllers\\petscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B832A271-3F0A-4575-B2D7-65AF557DC623}|PetShop.Repository\\PetShop.Repository.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.repository\\interface\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B832A271-3F0A-4575-B2D7-65AF557DC623}|PetShop.Repository\\PetShop.Repository.csproj|solutionrelative:petshop.repository\\interface\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.service\\implementation\\petservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|solutionrelative:petshop.service\\implementation\\petservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.service\\implementation\\adoptionapplicationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|solutionrelative:petshop.service\\implementation\\adoptionapplicationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.web\\views\\pets\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|solutionrelative:petshop.web\\views\\pets\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.web\\controllers\\petscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|solutionrelative:petshop.web\\controllers\\petscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.web\\controllers\\adoptionapplicationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|solutionrelative:petshop.web\\controllers\\adoptionapplicationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.web\\views\\adoptionapplications\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|solutionrelative:petshop.web\\views\\adoptionapplications\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.web\\views\\shelters\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|solutionrelative:petshop.web\\views\\shelters\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.web\\controllers\\shelterscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|solutionrelative:petshop.web\\controllers\\shelterscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.web\\views\\shelters\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|solutionrelative:petshop.web\\views\\shelters\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51FD3EE5-0542-40B9-9715-4CC5CB548F32}|PetShop.Domain\\PetShop.Domain.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.domain\\entities\\pet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51FD3EE5-0542-40B9-9715-4CC5CB548F32}|PetShop.Domain\\PetShop.Domain.csproj|solutionrelative:petshop.domain\\entities\\pet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51FD3EE5-0542-40B9-9715-4CC5CB548F32}|PetShop.Domain\\PetShop.Domain.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.domain\\dto\\shelterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51FD3EE5-0542-40B9-9715-4CC5CB548F32}|PetShop.Domain\\PetShop.Domain.csproj|solutionrelative:petshop.domain\\dto\\shelterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.service\\implementation\\shelterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|solutionrelative:petshop.service\\implementation\\shelterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.service\\mappers\\sheltermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|solutionrelative:petshop.service\\mappers\\sheltermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51FD3EE5-0542-40B9-9715-4CC5CB548F32}|PetShop.Domain\\PetShop.Domain.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.domain\\entities\\shelter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51FD3EE5-0542-40B9-9715-4CC5CB548F32}|PetShop.Domain\\PetShop.Domain.csproj|solutionrelative:petshop.domain\\entities\\shelter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.web\\views\\shelters\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|solutionrelative:petshop.web\\views\\shelters\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.web\\views\\shelters\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|solutionrelative:petshop.web\\views\\shelters\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.web\\views\\pets\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|solutionrelative:petshop.web\\views\\pets\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51FD3EE5-0542-40B9-9715-4CC5CB548F32}|PetShop.Domain\\PetShop.Domain.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.domain\\entities\\adoptionapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51FD3EE5-0542-40B9-9715-4CC5CB548F32}|PetShop.Domain\\PetShop.Domain.csproj|solutionrelative:petshop.domain\\entities\\adoptionapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.service\\interface\\ishelterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|solutionrelative:petshop.service\\interface\\ishelterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.service\\implementation\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|solutionrelative:petshop.service\\implementation\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.service\\interface\\ipetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|solutionrelative:petshop.service\\interface\\ipetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.service\\interface\\igenericcrudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|solutionrelative:petshop.service\\interface\\igenericcrudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.service\\mappers\\petshopapplicationusermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|solutionrelative:petshop.service\\mappers\\petshopapplicationusermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51FD3EE5-0542-40B9-9715-4CC5CB548F32}|PetShop.Domain\\PetShop.Domain.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.domain\\identity\\petshopapplicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51FD3EE5-0542-40B9-9715-4CC5CB548F32}|PetShop.Domain\\PetShop.Domain.csproj|solutionrelative:petshop.domain\\identity\\petshopapplicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.web\\views\\shelters\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|solutionrelative:petshop.web\\views\\shelters\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.service\\mappers\\adoptionapplicationmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3CCE2C6-5DA0-45F5-A970-484CCC332072}|PetShop.Service\\PetShop.Service.csproj|solutionrelative:petshop.service\\mappers\\adoptionapplicationmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|c:\\users\\kater\\desktop\\faks\\6_semestar\\is\\seminarska-is\\petshopapp\\petshop.web\\views\\adoptionapplications\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3466C49F-6035-4D74-A2E9-0E6CAE010463}|PetShop.Web\\PetShop.Web.csproj|solutionrelative:petshop.web\\views\\adoptionapplications\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,30 +126,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AdoptionApplicationService.cs",
-              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\Implementation\\AdoptionApplicationService.cs",
-              "RelativeDocumentMoniker": "PetShop.Service\\Implementation\\AdoptionApplicationService.cs",
-              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\Implementation\\AdoptionApplicationService.cs",
-              "RelativeToolTip": "PetShop.Service\\Implementation\\AdoptionApplicationService.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAYwC8AAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T08:49:56.559Z",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Views\\Pets\\Index.cshtml",
+              "RelativeDocumentMoniker": "PetShop.Web\\Views\\Pets\\Index.cshtml",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Views\\Pets\\Index.cshtml",
+              "RelativeToolTip": "PetShop.Web\\Views\\Pets\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-09T14:59:22.496Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "PetService.cs",
               "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\Implementation\\PetService.cs",
               "RelativeDocumentMoniker": "PetShop.Service\\Implementation\\PetService.cs",
               "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\Implementation\\PetService.cs",
               "RelativeToolTip": "PetShop.Service\\Implementation\\PetService.cs",
-              "ViewState": "AQIAAFYAAAAAAAAAAAAswAAAAAAAAAAA",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAqwG0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-09T08:49:43.767Z",
               "EditorCaption": ""
@@ -65,6 +157,323 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "PetsController.cs",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Controllers\\PetsController.cs",
+              "RelativeDocumentMoniker": "PetShop.Web\\Controllers\\PetsController.cs",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Controllers\\PetsController.cs",
+              "RelativeToolTip": "PetShop.Web\\Controllers\\PetsController.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAxwCgAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T08:46:32.616Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AdoptionApplicationsController.cs",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Controllers\\AdoptionApplicationsController.cs",
+              "RelativeDocumentMoniker": "PetShop.Web\\Controllers\\AdoptionApplicationsController.cs",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Controllers\\AdoptionApplicationsController.cs",
+              "RelativeToolTip": "PetShop.Web\\Controllers\\AdoptionApplicationsController.cs",
+              "ViewState": "AQIAAAsBAAAAAAAAAAAswCMBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T21:27:58.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Repository\\Interface\\IRepository.cs",
+              "RelativeDocumentMoniker": "PetShop.Repository\\Interface\\IRepository.cs",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Repository\\Interface\\IRepository.cs",
+              "RelativeToolTip": "PetShop.Repository\\Interface\\IRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T12:04:52.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdoptionApplicationService.cs",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\Implementation\\AdoptionApplicationService.cs",
+              "RelativeDocumentMoniker": "PetShop.Service\\Implementation\\AdoptionApplicationService.cs",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\Implementation\\AdoptionApplicationService.cs*",
+              "RelativeToolTip": "PetShop.Service\\Implementation\\AdoptionApplicationService.cs*",
+              "ViewState": "AQIAACkAAAAAAAAAAAAmwDUAAABuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T08:49:56.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Repository\\Implementation\\Repository.cs",
+              "RelativeDocumentMoniker": "PetShop.Repository\\Implementation\\Repository.cs",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Repository\\Implementation\\Repository.cs*",
+              "RelativeToolTip": "PetShop.Repository\\Implementation\\Repository.cs*",
+              "ViewState": "AQIAAFIAAAAAAAAAAAAwwCQAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T12:04:16.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Views\\Pets\\Create.cshtml",
+              "RelativeDocumentMoniker": "PetShop.Web\\Views\\Pets\\Create.cshtml",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Views\\Pets\\Create.cshtml",
+              "RelativeToolTip": "PetShop.Web\\Views\\Pets\\Create.cshtml",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAhwAoAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-09T10:07:41.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Shelter.cs",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Domain\\Entities\\Shelter.cs",
+              "RelativeDocumentMoniker": "PetShop.Domain\\Entities\\Shelter.cs",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Domain\\Entities\\Shelter.cs",
+              "RelativeToolTip": "PetShop.Domain\\Entities\\Shelter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T09:44:50.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Views\\Shelters\\Delete.cshtml",
+              "RelativeDocumentMoniker": "PetShop.Web\\Views\\Shelters\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Views\\Shelters\\Delete.cshtml",
+              "RelativeToolTip": "PetShop.Web\\Views\\Shelters\\Delete.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAQAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-09T15:13:35.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Views\\AdoptionApplications\\Index.cshtml",
+              "RelativeDocumentMoniker": "PetShop.Web\\Views\\AdoptionApplications\\Index.cshtml",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Views\\AdoptionApplications\\Index.cshtml",
+              "RelativeToolTip": "PetShop.Web\\Views\\AdoptionApplications\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-09T14:59:21.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ShelterMapper.cs",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\Mappers\\ShelterMapper.cs",
+              "RelativeDocumentMoniker": "PetShop.Service\\Mappers\\ShelterMapper.cs",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\Mappers\\ShelterMapper.cs",
+              "RelativeToolTip": "PetShop.Service\\Mappers\\ShelterMapper.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAwwDoAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T09:49:34.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Views\\Shelters\\Edit.cshtml",
+              "RelativeDocumentMoniker": "PetShop.Web\\Views\\Shelters\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Views\\Shelters\\Edit.cshtml",
+              "RelativeToolTip": "PetShop.Web\\Views\\Shelters\\Edit.cshtml",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAAEMAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-09T14:16:04.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SheltersController.cs",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Controllers\\SheltersController.cs",
+              "RelativeDocumentMoniker": "PetShop.Web\\Controllers\\SheltersController.cs",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Controllers\\SheltersController.cs",
+              "RelativeToolTip": "PetShop.Web\\Controllers\\SheltersController.cs",
+              "ViewState": "AQIAAIgAAAAAAAAAAADwv5UAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T09:41:05.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Views\\Shelters\\Details.cshtml",
+              "RelativeDocumentMoniker": "PetShop.Web\\Views\\Shelters\\Details.cshtml",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Views\\Shelters\\Details.cshtml",
+              "RelativeToolTip": "PetShop.Web\\Views\\Shelters\\Details.cshtml",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAADMAAABVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-09T09:45:37.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Pet.cs",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Domain\\Entities\\Pet.cs",
+              "RelativeDocumentMoniker": "PetShop.Domain\\Entities\\Pet.cs",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Domain\\Entities\\Pet.cs",
+              "RelativeToolTip": "PetShop.Domain\\Entities\\Pet.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAcwBQAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T09:51:41.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ShelterService.cs",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\Implementation\\ShelterService.cs",
+              "RelativeDocumentMoniker": "PetShop.Service\\Implementation\\ShelterService.cs",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\Implementation\\ShelterService.cs",
+              "RelativeToolTip": "PetShop.Service\\Implementation\\ShelterService.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAA+wD8AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T09:25:30.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ShelterDTO.cs",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Domain\\DTO\\ShelterDTO.cs",
+              "RelativeDocumentMoniker": "PetShop.Domain\\DTO\\ShelterDTO.cs",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Domain\\DTO\\ShelterDTO.cs",
+              "RelativeToolTip": "PetShop.Domain\\DTO\\ShelterDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T09:42:27.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Views\\Shelters\\Create.cshtml",
+              "RelativeDocumentMoniker": "PetShop.Web\\Views\\Shelters\\Create.cshtml",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Views\\Shelters\\Create.cshtml",
+              "RelativeToolTip": "PetShop.Web\\Views\\Shelters\\Create.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-09T14:15:41.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AdoptionApplication.cs",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Domain\\Entities\\AdoptionApplication.cs",
+              "RelativeDocumentMoniker": "PetShop.Domain\\Entities\\AdoptionApplication.cs",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Domain\\Entities\\AdoptionApplication.cs",
+              "RelativeToolTip": "PetShop.Domain\\Entities\\AdoptionApplication.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T09:18:09.103Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IShelterService.cs",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\Interface\\IShelterService.cs",
+              "RelativeDocumentMoniker": "PetShop.Service\\Interface\\IShelterService.cs",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\Interface\\IShelterService.cs",
+              "RelativeToolTip": "PetShop.Service\\Interface\\IShelterService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T11:52:08.903Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\Implementation\\UserService.cs",
+              "RelativeDocumentMoniker": "PetShop.Service\\Implementation\\UserService.cs",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\Implementation\\UserService.cs",
+              "RelativeToolTip": "PetShop.Service\\Implementation\\UserService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T09:25:34.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IGenericCRUDService.cs",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\Interface\\IGenericCRUDService.cs",
+              "RelativeDocumentMoniker": "PetShop.Service\\Interface\\IGenericCRUDService.cs",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\Interface\\IGenericCRUDService.cs",
+              "RelativeToolTip": "PetShop.Service\\Interface\\IGenericCRUDService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T11:52:13.854Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Views\\Shelters\\Index.cshtml",
+              "RelativeDocumentMoniker": "PetShop.Web\\Views\\Shelters\\Index.cshtml",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Views\\Shelters\\Index.cshtml",
+              "RelativeToolTip": "PetShop.Web\\Views\\Shelters\\Index.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-09T09:42:11.485Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "PetShopApplicationUserMapper.cs",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\Mappers\\PetShopApplicationUserMapper.cs",
+              "RelativeDocumentMoniker": "PetShop.Service\\Mappers\\PetShopApplicationUserMapper.cs",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\Mappers\\PetShopApplicationUserMapper.cs",
+              "RelativeToolTip": "PetShop.Service\\Mappers\\PetShopApplicationUserMapper.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T09:17:09.146Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "AdoptionApplicationMapper.cs",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\Mappers\\AdoptionApplicationMapper.cs",
+              "RelativeDocumentMoniker": "PetShop.Service\\Mappers\\AdoptionApplicationMapper.cs",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\Mappers\\AdoptionApplicationMapper.cs",
+              "RelativeToolTip": "PetShop.Service\\Mappers\\AdoptionApplicationMapper.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAgwDUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T08:52:26.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "PetShopApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Domain\\Identity\\PetShopApplicationUser.cs",
+              "RelativeDocumentMoniker": "PetShop.Domain\\Identity\\PetShopApplicationUser.cs",
+              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Domain\\Identity\\PetShopApplicationUser.cs",
+              "RelativeToolTip": "PetShop.Domain\\Identity\\PetShopApplicationUser.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAA0wB4AAABbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T09:10:12.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "IPetService.cs",
               "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\Interface\\IPetService.cs",
               "RelativeDocumentMoniker": "PetShop.Service\\Interface\\IPetService.cs",
@@ -72,12 +481,11 @@
               "RelativeToolTip": "PetShop.Service\\Interface\\IPetService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T08:49:39.91Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-09T08:49:39.91Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 28,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Views\\AdoptionApplications\\Create.cshtml",
               "RelativeDocumentMoniker": "PetShop.Web\\Views\\AdoptionApplications\\Create.cshtml",
@@ -85,34 +493,7 @@
               "RelativeToolTip": "PetShop.Web\\Views\\AdoptionApplications\\Create.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAMwAoAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-09T08:48:01.001Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PetsController.cs",
-              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Controllers\\PetsController.cs",
-              "RelativeDocumentMoniker": "PetShop.Web\\Controllers\\PetsController.cs",
-              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Controllers\\PetsController.cs",
-              "RelativeToolTip": "PetShop.Web\\Controllers\\PetsController.cs",
-              "ViewState": "AQIAANQAAAAAAAAAAAAAwOEAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T08:46:32.616Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AdoptionApplicationsController.cs",
-              "DocumentMoniker": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Controllers\\AdoptionApplicationsController.cs",
-              "RelativeDocumentMoniker": "PetShop.Web\\Controllers\\AdoptionApplicationsController.cs",
-              "ToolTip": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\Controllers\\AdoptionApplicationsController.cs",
-              "RelativeToolTip": "PetShop.Web\\Controllers\\AdoptionApplicationsController.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAYwC8AAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T21:27:58.25Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-09T08:48:01.001Z"
             }
           ]
         }

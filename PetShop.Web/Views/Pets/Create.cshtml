@@ -1,8 +1,9 @@
 ﻿@model PetShop.Domain.DTO.RequestPetDTO
 @using PetShop.Domain.Enum
+@using PetShop.Domain.DTO
 
 @{
-    IEnumerable<Shelter> shelters = ViewData["Shelters"] as IEnumerable<Shelter>;
+    IEnumerable<ShelterDTO> shelters = ViewData["Shelters"] as IEnumerable<ShelterDTO>;
     IEnumerable<AnimalType> types = ViewData["AnimalTypes"] as IEnumerable<AnimalType>;
     IEnumerable<GenderType> genders = ViewData["Genders"] as IEnumerable<GenderType>;
     IEnumerable<SizeOfAnimal> sizes = ViewData["Sizes"] as IEnumerable<SizeOfAnimal>;

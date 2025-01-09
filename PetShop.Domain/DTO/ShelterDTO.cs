@@ -17,7 +17,7 @@ namespace PetShop.Domain.DTO
         public int AvailableSpaces { get; set; }
         public string? PhoneNumber { get; set; }
         public Guid Id { get; set; } // Shelter ID
-        public List<ResponsePetDTO>? Pets { get; set; }
+        public List<Pet>? Pets { get; set; } = new List<Pet>();
 
     }
 }

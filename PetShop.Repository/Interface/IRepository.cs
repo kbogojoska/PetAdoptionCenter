@@ -9,8 +9,8 @@ namespace PetShop.Repository.Interface
 {
     public interface IRepository<T> where T : BaseEntity
     {
-        IEnumerable<T> GetAll();
-        T Get(Guid? id);
+        IEnumerable<T> GetAll(Func<IQueryable<T>, IQueryable<T>> include = null);
+        T Get(Guid? id, Func<IQueryable<T>, IQueryable<T>> include = null);
         T Insert(T entity);
         T Update(T entity);
         T Delete(Guid? id);

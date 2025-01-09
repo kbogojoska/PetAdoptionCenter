@@ -1,28 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.WebSockets;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using PetShop.Domain.DTO;
 using PetShop.Domain.Entities;
 using PetShop.Repository;
+using PetShop.Service.Implementation;
+using PetShop.Service.Interface;
 
 namespace PetShop.Web.Controllers
 {
     public class SheltersController : Controller
     {
         private readonly ApplicationDbContext _context;
+        protected readonly IShelterService _shelterService;
+        protected readonly IPetService _petService;
 
-        public SheltersController(ApplicationDbContext context)
+        public SheltersController(ApplicationDbContext context, IShelterService shelterService, IPetService petService)
         {
             _context = context;
+            _shelterService = shelterService;
+            _petService = petService;
         }
 
         // GET: Shelters
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Shelters.ToListAsync());
+            return View(_shelterService.FindAll());
         }
 
         // GET: Shelters/Details/5
@@ -33,8 +41,7 @@ namespace PetShop.Web.Controllers
                 return NotFound();
             }
 
-            var shelter = await _context.Shelters
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var shelter = _shelterService.FindById(id.ToString());
             if (shelter == null)
             {
                 return NotFound();
@@ -54,16 +61,23 @@ namespace PetShop.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("City,Name,Address,Capacity,AvailableSpaces,PhoneNumber,Id")] Shelter shelter)
+        public async Task<IActionResult> Create(ShelterDTO shelterDTO)
         {
             if (ModelState.IsValid)
             {
-                shelter.Id = Guid.NewGuid();
-                _context.Add(shelter);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                try
+                {
+                    var shelter = _shelterService.Store(shelterDTO);
+
+                    TempData["Success"] = "You have successfully adopted the pet!";
+                    return RedirectToAction("Index");
+                }
+                catch (Exception ex)
+                {
+                    ViewData["ErrorMessage"] = "Something went wrong.";
+                }
             }
-            return View(shelter);
+            return View(shelterDTO);
         }
 
         // GET: Shelters/Edit/5
@@ -74,7 +88,7 @@ namespace PetShop.Web.Controllers
                 return NotFound();
             }
 
-            var shelter = await _context.Shelters.FindAsync(id);
+            var shelter = _shelterService.FindById(id.ToString());
             if (shelter == null)
             {
                 return NotFound();
@@ -87,9 +101,9 @@ namespace PetShop.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("City,Name,Address,Capacity,AvailableSpaces,PhoneNumber,Id")] Shelter shelter)
+        public async Task<IActionResult> Edit(Guid id, ShelterDTO shelterDTO)
         {
-            if (id != shelter.Id)
+            if (id != shelterDTO.Id)
             {
                 return NotFound();
             }
@@ -98,23 +112,16 @@ namespace PetShop.Web.Controllers
             {
                 try
                 {
-                    _context.Update(shelter);
-                    await _context.SaveChangesAsync();
+                    _shelterService.Update(id.ToString(), shelterDTO);
+                    return RedirectToAction("Index");
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (Exception ex)
                 {
-                    if (!ShelterExists(shelter.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    ViewData["ErrorMessage"] = "Something went wrong.";
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(shelter);
+            return View(shelterDTO);
         }
 
         // GET: Shelters/Delete/5
@@ -125,8 +132,7 @@ namespace PetShop.Web.Controllers
                 return NotFound();
             }
 
-            var shelter = await _context.Shelters
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var shelter = _shelterService.FindById(id.ToString());
             if (shelter == null)
             {
                 return NotFound();
@@ -140,19 +146,27 @@ namespace PetShop.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var shelter = await _context.Shelters.FindAsync(id);
+            var shelter = _shelterService.FindById(id.ToString());
             if (shelter != null)
             {
-                _context.Shelters.Remove(shelter);
+                /*foreach(var pet in shelter.Pets)
+                {
+                    _petService.DeleteById(pet.Id);
+                }*/
+                _shelterService.DeleteById(id.ToString());
+            }
+            else
+            {
+                return NotFound();
+
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ShelterExists(Guid id)
+        /*private bool ShelterExists(Guid id)
         {
             return _context.Shelters.Any(e => e.Id == id);
-        }
+        }*/
     }
 }

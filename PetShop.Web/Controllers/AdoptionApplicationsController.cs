@@ -298,9 +298,9 @@ namespace PetShop.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool AdoptionApplicationExists(Guid id)
+        /*private bool AdoptionApplicationExists(Guid id)
         {
             return _context.AdoptionApplications.Any(e => e.Id == id);
-        }
+        }*/
     }
 }

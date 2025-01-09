@@ -24,7 +24,7 @@ namespace PetShop.Service.Implementation
         }
         public ResponsePetDTO DeleteById(Guid id)
         {
-            var shelter = shelterRepository.Get(FindById(id).ShelterOfResidenceId) ?? throw new Exception("Shelter not found.");
+            var shelter = shelterRepository.Get(FindById(id).ShelterOfResidenceId, query => query.Include(s=>s.Pets)) ?? throw new Exception("Shelter not found.");
             shelter.AvailableSpaces = shelter.AvailableSpaces + 1;
             Pet pet = petRepository.Delete(id);
 
@@ -88,7 +88,7 @@ namespace PetShop.Service.Implementation
 
         public ResponsePetDTO Store(RequestPetDTO requestPetDto) 
         {
-            var shelter = shelterRepository.Get(requestPetDto.ShelterOfResidenceId) ?? throw new Exception("Shelter not found.");
+            var shelter = shelterRepository.Get(requestPetDto.ShelterOfResidenceId, query => query.Include(s => s.Pets)) ?? throw new Exception("Shelter not found.");
             Pet pet = requestPetDto.ToPet(shelter);
             shelter.AvailableSpaces = shelter.AvailableSpaces - 1;
 			if (shelter.Pets == null)
@@ -105,11 +105,10 @@ namespace PetShop.Service.Implementation
 
         public ResponsePetDTO Update(Guid id, RequestPetDTO requestPetDto)
         {
-
             Pet pet = petRepository.Get(id);
             if (pet == null) throw new Exception("Pet not found.");
 
-            var shelter = shelterRepository.Get(requestPetDto.ShelterOfResidenceId);
+            var shelter = shelterRepository.Get(requestPetDto.ShelterOfResidenceId, query => query.Include(s => s.Pets));
             if (shelter == null) throw new Exception("Shelter not found.");
 
             pet.UpdateFromRequestDto(requestPetDto, shelter);

@@ -1,5 +1,6 @@
 ﻿using PetShop.Domain.DTO;
 using PetShop.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using PetShop.Repository.Interface;
 using PetShop.Service.Interface;
 using PetShop.Service.Mappers;
@@ -28,7 +29,7 @@ namespace PetShop.Service.Implementation
 
         public List<ShelterDTO> FindAll()
         {
-            return shelterRepository.GetAll()
+            return shelterRepository.GetAll(query => query.Include(s => s.Pets))
                 .Select(item => item.toShelterDTO())
                 .ToList();
         }
@@ -36,7 +37,7 @@ namespace PetShop.Service.Implementation
         public ShelterDTO FindById(string id)
         {
             Guid guidId = Guid.Parse(id);
-            return shelterRepository.Get(guidId).toShelterDTO();
+            return shelterRepository.Get(guidId, query => query.Include(s => s.Pets)).toShelterDTO();
         }
 
         public ShelterDTO Store(ShelterDTO tDto)
@@ -56,7 +57,7 @@ namespace PetShop.Service.Implementation
 
         public ShelterDTO Update(string id, ShelterDTO shelterDTO)
         {
-            Shelter shelter = shelterRepository.Get(Guid.Parse(id));
+            Shelter shelter = shelterRepository.Get(Guid.Parse(id), query => query.Include(s => s.Pets));
             shelter.updateShelter(shelterDTO);
             shelterRepository.Update(shelter);
             return shelter.toShelterDTO();

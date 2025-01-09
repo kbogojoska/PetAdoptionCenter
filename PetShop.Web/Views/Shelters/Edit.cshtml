@@ -1,4 +1,4 @@
-﻿@model PetShop.Domain.Entities.Shelter
+﻿@model PetShop.Domain.DTO.ShelterDTO
 
 @{
     ViewData["Title"] = "Edit Shelter";
@@ -6,7 +6,7 @@
 }
 
 <div class="container mt-4">
-    
+
     <h1 class="text-center mb-4">Edit Shelter</h1>
 
     <div class="card shadow-sm">
@@ -66,7 +66,51 @@
             </form>
         </div>
     </div>
+
+    <div class="mt-4">
+        <div class="d-flex justify-content-end align-items-center">
+            <a asp-controller="Pets" asp-action="Create" class="btn btn-primary btn-sm">
+                <i class="bi bi-plus-circle"></i> Add Pet
+            </a>
+        </div>
+        <h3>Pets in Shelter</h3>
+        @if (Model.Pets != null && Model.Pets.Any())
+        {
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Breed</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var pet in Model.Pets)
+                    {
+                        <tr>
+                            <td>@pet.Name</td>
+                            <td>@pet.Breed</td>
+                            <td>@pet.Age</td>
+                            <td>@pet.Gender</td>
+                            <td>
+                                <a asp-controller="Pets" asp-action="Delete" asp-route-id="@pet.Id" method="get" class="btn btn-danger btn-sm">
+                                        <i class="bi bi-trash"></i> Delete
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No pets found in this shelter.</p>
+        }
+    </div>
 </div>
+
 
 @section Scripts {
     @{
