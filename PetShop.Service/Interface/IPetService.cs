@@ -12,10 +12,10 @@ namespace PetShop.Service.Interface
         ResponsePetDTO Store(RequestPetDTO requestDto); // Saves a pet using RequestPetDto
         ResponsePetDTO Update(Guid id, RequestPetDTO requestDto); // Updates a pet using RequestPetDto
         RequestPetDTO FindById(Guid id); // Retrieves a pet by Id as ResponsePetDto
-        List<RequestPetDTO> FindAll(); // Retrieves all pets as a list of ResponsePetDto
+        List<RequestPetDTO> FindAll(bool? isAvailable=null); // Retrieves all pets as a list of ResponsePetDto
         ResponsePetDTO DeleteById(Guid id);
-        List<RequestPetDTO> FindByShelter(Guid shelterId);
-        List<RequestPetDTO> FindByCity(string city);
+        List<RequestPetDTO> FindByShelter(Guid shelterId, bool? isAvailable=null);
+        List<RequestPetDTO> FindByCity(string city, bool? isAvailable=null);
 
     }
 }

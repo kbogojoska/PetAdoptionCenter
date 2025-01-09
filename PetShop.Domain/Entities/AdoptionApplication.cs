@@ -11,6 +11,8 @@ namespace PetShop.Domain.Entities
     public class AdoptionApplication : BaseEntity
     {
         [Required]
+        public required string ApplicantId { get; set; }
+        [Required]
         public required PetShopApplicationUser Applicant { get; set; }
         [Required]
         public Guid PetId { get; set; }

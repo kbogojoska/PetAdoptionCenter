@@ -4,8 +4,6 @@ using PetShop.Repository.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PetShop.Repository.Implementation
 {
@@ -24,7 +22,7 @@ namespace PetShop.Repository.Implementation
         {
             if (user == null)
             {
-                throw new ArgumentNullException("user is not found");
+                throw new ArgumentNullException(nameof(user), "User is not found");
             }
             _entities.Remove(user);
             _context.SaveChanges();
@@ -32,24 +30,25 @@ namespace PetShop.Repository.Implementation
 
         public PetShopApplicationUser Get(string id)
         {
-            var str = id.ToString();
-            return _entities.Include(u => u.Name)
-                .Include(u => u.Surname)
-                .Include(u => u.ContactPhoneNumber)
-                .Include(u => u.Age)
-                .First(u => u.Id == str);
+            return _entities
+				.Include(u => u.AdoptionApplications)
+                .ThenInclude(a => a.Pet)
+                .FirstOrDefault(u => u.Id == id);
         }
 
         public IEnumerable<PetShopApplicationUser> GetAll()
         {
-            return _entities.AsEnumerable();
+            return _entities
+                .Include(u => u.AdoptionApplications)
+                .ThenInclude(a => a.Pet)
+                .AsEnumerable();
         }
 
         public void Insert(PetShopApplicationUser user)
         {
-            if(user == null)
+            if (user == null)
             {
-                throw new ArgumentNullException("user is not found");
+                throw new ArgumentNullException(nameof(user), "User cannot be null");
             }
             _entities.Add(user);
             _context.SaveChanges();
@@ -59,8 +58,9 @@ namespace PetShop.Repository.Implementation
         {
             if (user == null)
             {
-                throw new ArgumentNullException("user is not found");
+                throw new ArgumentNullException(nameof(user), "User cannot be null");
             }
+            // adoption application list?
             _entities.Update(user);
             _context.SaveChanges();
         }

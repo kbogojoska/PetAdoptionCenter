@@ -8,12 +8,14 @@ using PetShop.Domain.Identity;
 using PetShop.Service.Implementation;
 using PetShop.Service.Interface;
 using PetShop.Domain.Entities;
+using PetShop.Service.Implementation.PetShop.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseSqlServer(connectionString)
+	.EnableSensitiveDataLogging());
 
 builder.Services.AddDefaultIdentity<PetShopApplicationUser>(options =>
 {
@@ -33,8 +35,12 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
 builder.Services.AddScoped<IShelterService, ShelterService>();
 builder.Services.AddScoped<IAdoptionApplicationService, AdoptionApplicationService>();
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IPetService, PetService>();
 
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+builder.Logging.AddDebug();
 
 var app = builder.Build();
 

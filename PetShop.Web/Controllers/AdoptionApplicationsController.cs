@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
@@ -13,6 +14,7 @@ using PetShop.Domain.Identity;
 using PetShop.Repository;
 using PetShop.Service.Interface;
 using PetShop.Service.Mappers;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace PetShop.Web.Controllers
 {
@@ -21,23 +23,35 @@ namespace PetShop.Web.Controllers
         private readonly ApplicationDbContext _context;
         protected readonly IPetService _petService;
         protected readonly IShelterService _shelterService;
+        protected readonly IUserService _userService;
         protected readonly UserManager<PetShopApplicationUser> _userManager;
         protected readonly IAdoptionApplicationService _adoptionApplicationService;
 
-		public AdoptionApplicationsController(ApplicationDbContext context, IPetService petService, UserManager<PetShopApplicationUser> userManager, IShelterService shelterService, IAdoptionApplicationService adoptionApplicationService)
-		{
-			_context = context;
-			this._petService = petService;
-			_userManager = userManager;
-			_shelterService = shelterService;
-			_adoptionApplicationService = adoptionApplicationService;
-		}
-
-		// GET: AdoptionApplications
-		public async Task<IActionResult> Index()
+        public AdoptionApplicationsController(ApplicationDbContext context, IPetService petService, UserManager<PetShopApplicationUser> userManager, IShelterService shelterService, IAdoptionApplicationService adoptionApplicationService, IUserService userService)
         {
-            var applicationDbContext = _context.AdoptionApplications.Include(a => a.Pet);
-            return View(await applicationDbContext.ToListAsync());
+            _context = context;
+            this._petService = petService;
+            _userManager = userManager;
+            _shelterService = shelterService;
+            _adoptionApplicationService = adoptionApplicationService;
+            _userService = userService;
+        }
+
+        // GET: AdoptionApplications
+        public async Task<IActionResult> Index()
+        {
+            var applications = _adoptionApplicationService.FindAll();
+            ViewData["Users"] = applications.Select(a =>
+            {
+                var user = _userService.FindById(a.ApplicantId);
+                return user;
+            }).ToList();
+            ViewData["Pets"] = applications.Select(a =>
+            {
+                var pet = _petService.FindById(a.PetId);
+                return pet.toResponsePetDto();
+            }).ToList();
+            return View(applications);
         }
 
         // GET: AdoptionApplications/Details/5
@@ -48,13 +62,13 @@ namespace PetShop.Web.Controllers
                 return NotFound();
             }
 
-            var adoptionApplication = await _context.AdoptionApplications
-                .Include(a => a.Pet)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var adoptionApplication = _adoptionApplicationService.FindById(id.ToString());
             if (adoptionApplication == null)
             {
                 return NotFound();
             }
+            ViewData["User"] = _userService.FindById(adoptionApplication.ApplicantId);
+            ViewData["Pet"] = _petService.FindById(adoptionApplication.PetId);
 
             return View(adoptionApplication);
         }
@@ -68,7 +82,6 @@ namespace PetShop.Web.Controllers
             {
                 return NotFound("Pet not found or not available for adoption.");
             }
-            Console.WriteLine(pet.ShelterOfResidenceId);
             var shelterDto = _shelterService.FindById(pet.ShelterOfResidenceId.ToString());
 
             var currentUser = _userManager.GetUserAsync(User).Result;
@@ -79,6 +92,7 @@ namespace PetShop.Web.Controllers
 
             var adoptionApplication = new AdoptionApplication
             {
+                ApplicantId = currentUser.Id,
                 Pet = pet.ToPet(shelterDto.toShelter()),
                 PetId = petId,
                 Applicant = currentUser,
@@ -87,8 +101,12 @@ namespace PetShop.Web.Controllers
                 IsValid = pet.isAvailable && currentUser.Age >= 18
             };
 
-            //ViewData["PetId"] = new SelectList(_context.Pets, "Id", "ImageURL");
-            return View(adoptionApplication);
+            var adoptionAppForView = adoptionApplication.toDTO();
+
+            ViewData["Pet"] = pet.ToPet(shelterDto.toShelter());
+            ViewData["Applicant"] = currentUser;
+
+            return View(adoptionAppForView);
         }
 
         // POST: AdoptionApplications/Create
@@ -98,21 +116,55 @@ namespace PetShop.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(AdoptionApplicationDTO adoptionApplicationDTO)
         {
-			if (ModelState.IsValid)
-			{
-				try
-				{
-					var result = _adoptionApplicationService.Store(adoptionApplicationDTO);
-					return RedirectToAction("Index", "AdoptionApplications");
-				}
-				catch (Exception ex)
-				{
-					ModelState.AddModelError("", ex.Message); // Display the error to the user
-				}
-			}
 
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null)
+            {
+                return Unauthorized("You must be logged in to adopt a pet.");
+            }
 
-			ViewData["PetId"] = new SelectList(_context.Pets, "Id", "ImageURL", adoptionApplicationDTO.PetId);
+            var petAdopted = _petService.FindById(adoptionApplicationDTO.PetId);
+
+            if (currentUser.Age >= 18 && petAdopted != null && petAdopted.isAvailable)
+            {
+                adoptionApplicationDTO.IsValid = true;
+            }
+            
+            if (ModelState.IsValid && adoptionApplicationDTO.IsValid)
+            {
+                try
+                {
+                    petAdopted.isAvailable = false;
+                    _petService.Update(petAdopted.Id, petAdopted);
+
+                    var result = _adoptionApplicationService.Store(adoptionApplicationDTO);                  
+
+                    TempData["Success"] = "You have successfully adopted the pet!";
+                    return RedirectToAction("Index", "Pets");
+                }
+                catch (Exception ex)
+                {
+                    ViewData["ErrorMessage"] = "Something went wrong.";
+                }
+            }
+            else
+            {
+                ViewData["ErrorMessage"] = "Something went wrong.";
+                if (currentUser.Age < 18)
+                {
+                    ViewData["ErrorMessage"] = "User must be above the age of 18 to adopt an animal";
+                }
+            }
+
+            var pet = _petService.FindById(adoptionApplicationDTO.PetId);
+            if (pet == null)
+            {
+                return NotFound("Pet not found.");
+            }
+
+            ViewData["Pet"] = pet;
+            ViewData["Applicant"] = currentUser;
+
             return View(adoptionApplicationDTO);
         }
 
@@ -124,12 +176,16 @@ namespace PetShop.Web.Controllers
                 return NotFound();
             }
 
-            var adoptionApplication = await _context.AdoptionApplications.FindAsync(id);
+            var adoptionApplication = _adoptionApplicationService.FindById(id.ToString());
             if (adoptionApplication == null)
             {
                 return NotFound();
             }
-            ViewData["PetId"] = new SelectList(_context.Pets, "Id", "ImageURL", adoptionApplication.PetId);
+
+            ViewData["Pet"] = _petService.FindById(adoptionApplication.PetId);
+            ViewData["User"] = _userService.FindById(adoptionApplication.ApplicantId);
+            ViewData["Pets"] = _petService.FindAll().Where(p => p.isAvailable == true).ToList();
+
             return View(adoptionApplication);
         }
 
@@ -138,35 +194,55 @@ namespace PetShop.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("PetId,IsValid,ApplicationDate,SumOfAdoptionFee,Id")] AdoptionApplication adoptionApplication)
+        public async Task<IActionResult> Edit(Guid id, AdoptionApplicationDTO adoptionApplicationDTO)
         {
-            if (id != adoptionApplication.Id)
+            if (id != adoptionApplicationDTO.Id)
             {
                 return NotFound();
             }
+            var prevApp = _adoptionApplicationService.FindById(adoptionApplicationDTO.Id.ToString());
 
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(adoptionApplication);
-                    await _context.SaveChangesAsync();
+                    var petPrevAdopted = _petService.FindById(prevApp.PetId);
+
+                    if (prevApp != null && prevApp.PetId != adoptionApplicationDTO.PetId)
+                    {
+                        petPrevAdopted.isAvailable = true;
+                        _petService.Update(petPrevAdopted.Id, petPrevAdopted);
+
+                        var newPet = _petService.FindById(adoptionApplicationDTO.PetId);
+                        newPet.isAvailable = false;
+                        _petService.Update(newPet.Id, newPet);
+                    }
+
+                    _adoptionApplicationService.Update(adoptionApplicationDTO.Id.ToString(), adoptionApplicationDTO);
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (Exception ex)
                 {
-                    if (!AdoptionApplicationExists(adoptionApplication.Id))
+                    var petPrevAdopted = _petService.FindById(prevApp.PetId);
+
+                    if (prevApp != null && prevApp.PetId != adoptionApplicationDTO.PetId)
                     {
-                        return NotFound();
+                        petPrevAdopted.isAvailable = false;
+                        _petService.Update(petPrevAdopted.Id, petPrevAdopted);
+
+                        var newPet = _petService.FindById(adoptionApplicationDTO.PetId);
+                        newPet.isAvailable = true;
+                        _petService.Update(newPet.Id, newPet);
                     }
-                    else
-                    {
-                        throw;
-                    }
+
+                    ViewData["ErrorMessage"] = "Something went wrong.";
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PetId"] = new SelectList(_context.Pets, "Id", "ImageURL", adoptionApplication.PetId);
-            return View(adoptionApplication);
+            ViewData["Pet"] = _petService.FindById(adoptionApplicationDTO.PetId);
+            ViewData["User"] = _userService.FindById(adoptionApplicationDTO.ApplicantId);
+            ViewData["Pets"] = _petService.FindAll().Where(p => p.isAvailable == true).ToList();
+
+            return View(adoptionApplicationDTO);
         }
 
         // GET: AdoptionApplications/Delete/5
@@ -177,9 +253,9 @@ namespace PetShop.Web.Controllers
                 return NotFound();
             }
 
-            var adoptionApplication = await _context.AdoptionApplications
-                .Include(a => a.Pet)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var adoptionApplication = _adoptionApplicationService.FindById(id.ToString());
+            ViewData["Pet"] = _petService.FindById(adoptionApplication.PetId).toResponsePetDto();
+            ViewData["User"] = _userService.FindById(adoptionApplication.ApplicantId);
             if (adoptionApplication == null)
             {
                 return NotFound();
@@ -193,13 +269,32 @@ namespace PetShop.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var adoptionApplication = await _context.AdoptionApplications.FindAsync(id);
+            var adoptionApplication = _adoptionApplicationService.FindById(id.ToString());
             if (adoptionApplication != null)
             {
-                _context.AdoptionApplications.Remove(adoptionApplication);
+                var petAdoptedDto = _petService.FindById(adoptionApplication.PetId);
+                petAdoptedDto.isAvailable = true;
+                _petService.Update(petAdoptedDto.Id, petAdoptedDto);
+
+                var shelter = _shelterService.FindById(petAdoptedDto.ShelterOfResidenceId.ToString()).toShelter();
+
+                var pet = petAdoptedDto.ToPet(shelter);
+
+                var user = _userService.FindById(adoptionApplication.ApplicantId);
+                if (user == null)
+                    throw new InvalidOperationException($"User with ID {adoptionApplication.ApplicantId} not found");
+
+                var countBefore = user.AdoptionApplications;
+
+                user.AdoptionApplications.Remove(adoptionApplication.toAdopApp(user.toApplicationUser(), pet));
+
+                _userService.Update(adoptionApplication.ApplicantId, user);
+
+                var countAfter = user.AdoptionApplications;
+
+                _adoptionApplicationService.DeleteById(id.ToString());
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 

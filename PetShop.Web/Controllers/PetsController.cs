@@ -28,46 +28,41 @@ namespace PetShop.Web.Controllers
         }
 
         // GET: Pets
-        public IActionResult Index(Guid? shelterId, string? city=null)
+        public IActionResult Index(Guid? shelterId, string? city=null, bool? isAvailable = null)
         {
             var shelters = _shelterService.FindAll();
 
             var cities = shelters.Select(s => s.City).Distinct().ToList();
-            ViewData["Shelters"] = shelters; // Populate shelters for the dropdown filter
+            ViewData["Shelters"] = shelters; 
             ViewData["Cities"] = cities;
+            ViewData["isAvailable"] = isAvailable ?? false;
 
 			List<RequestPetDTO> pets;
 
             if (shelterId.HasValue && city!=null)
             {
-                pets = _petService.FindByShelter(shelterId.Value); // Get pets for the selected shelter
-                ViewData["SelectedShelterId"] = shelterId.Value;  // Track the selected shelter in the view
+                pets = _petService.FindByShelter(shelterId.Value, isAvailable); 
+                ViewData["SelectedShelterId"] = shelterId.Value;  
             }
             else if(shelterId.HasValue)
             {
-                pets = _petService.FindByShelter(shelterId.Value); // Get pets for the selected shelter
+                pets = _petService.FindByShelter(shelterId.Value, isAvailable); 
                 ViewData["SelectedShelterId"] = shelterId.Value;
             }
             else if(city!=null)
             {
-                pets = _petService.FindByCity(city); // Get pets for the selected shelter
+                pets = _petService.FindByCity(city, isAvailable); 
 				ViewData["SelectedCity"] = city;
 			}
             else
             {
-                pets = _petService.FindAll(); // Get all pets if no shelter is selected
+                pets = _petService.FindAll(isAvailable); 
             }
 
             return View(pets);
         }
 
-        /*
-        public IActionResult Index()
-        {
-            var pets = _petService.FindAll();
-            return View(pets);
-        }
-        */
+        
 
         // GET: Pets/Details/5
         public async Task<IActionResult> Details(Guid id)

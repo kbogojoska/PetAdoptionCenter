@@ -109,7 +109,7 @@ namespace PetShop.Web.Areas.Identity.Pages.Account
 			{
 				var user = CreateUser();
 
-				// Set custom properties
+
 				user.Name = Input.Name;
 				user.Surname = Input.Surname;
 				user.Age = Input.Age;

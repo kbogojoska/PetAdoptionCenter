@@ -3,10 +3,19 @@
 @{
 	ViewData["Title"] = "Available Pets";
 	IEnumerable<string> cities = ViewData["Cities"] as IEnumerable<string>;
+	var isAvailable = ViewData["isAvailable"];
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container mt-4" style="max-width: 1100px;">
+	@if (TempData["Success"] != null)
+	{
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+			<strong>Success!</strong> @TempData["Success"]
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	}
+
 	<h1 class="text-center mb-4">Find Your Perfect Pet</h1>
 
 	<p class="text-center text-muted fs-6 text-truncate" style="max-width: 100%;">
@@ -19,11 +28,11 @@
 			<span class="text-sm">Choose shelter to see available pets:</span>
 		</div>
 		<div class="d-flex flex-column flex-sm-row justify-content-between align-items-center mb-4 mt-2">
-			<div class="d-flex flex-column flex-sm-row justify-content-start align-items-center mb-4 mt-2 gap-4">
-				<form method="get" asp-action="Index" class="d-flex flex-grow-1 mb-3 mb-sm-0 mr-4">
-					<div class="w-100">
+			<div class="d-flex flex-column flex-sm-row flex-wrap gap-3 mb-4 mt-2 align-items-start" style="max-width: 500px;">
+				<form method="get" asp-action="Index" class="d-flex flex-column flex-sm-row gap-4 w-100 mt-2">
+					<div class="w-100 mt-2">
 						<div class="input-group">
-							<select id="shelterFilter" name="shelterId" class="form-select form-select-sm" style="max-width: 250px;">
+							<select id="shelterFilter" name="shelterId" class="form-select form-select-sm" style="max-width: 100%;">
 								<option value="">All Shelters</option>
 								@foreach (var shelter in (IEnumerable<PetShop.Domain.DTO.ShelterDTO>)ViewData["Shelters"])
 								{
@@ -32,16 +41,12 @@
 									</!option>
 								}
 							</select>
-							<button type="submit" class="btn btn-primary">Filter</button>
 						</div>
 					</div>
-				</form>
-
-				<form method="get" asp-action="Index" class="d-flex flex-grow-1 mb-3 mb-sm-0">
-					<div class="w-100">
+					<div class="w-100 mt-2">
 						<div class="input-group">
-							<select id="shelterCityFilter" name="city" class="form-select form-select-sm pr-5" style="max-width: 250px;">
-								<option value="" class="pr-5">All Cities</option>
+							<select id="shelterCityFilter" name="city" class="form-select form-select-sm" style="max-width: 100%;">
+								<option value="">All Cities</option>
 								@foreach (var city in cities)
 								{
 									<!option value="@city" @(ViewData["SelectedCity"]?.ToString() == city ? "selected" : "")>
@@ -49,11 +54,16 @@
 									</!option>
 								}
 							</select>
-							<button type="submit" class="btn btn-primary">Filter</button>
 						</div>
 					</div>
+					<div class="d-flex align-items-center gap-2">
+						<input type="checkbox" id="availableFilter" name="isAvailable" class="form-check-input p-1" value="true" @(isAvailable != null && (bool)isAvailable == true ? "checked" : "")>
+						<label for="availableFilter" class="form-check-label mt-1" style="font-size: 0.875rem; white-space: nowrap">Available Only</label>
+					</div>
+					<button type="submit" class="btn btn-primary">Filter</button>
 				</form>
 			</div>
+
 
 			<a asp-action="Create" class="btn btn-primary align-self-center ms-3">
 				<i class="bi bi-plus-circle"></i> Add New Pet
@@ -63,7 +73,6 @@
 </div>
 
 
-<!-- Pet Cards Section -->
 <div class="row">
 	@foreach (var item in Model)
 	{
@@ -73,7 +82,10 @@
 					<img src="@item.ImageURL" alt="@item.Name" class="rounded" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
 				</div>
 				<div class="card-body">
-					<h5 class="card-title text-center">@item.Name</h5>
+					<h5 class="card-title text-center">@item.Name@if (!item.isAvailable)
+						{
+							<span> (Adopted)</span>
+						}</h5>
 					<p class="card-text text-muted small text-center">
 						<strong>Breed:</strong> @item.Breed <br />
 						<strong>Age:</strong> @item.Age years <br />
@@ -92,9 +104,12 @@
 								<i class="bi bi-trash"></i> Delete
 							</a>
 						</div>
-						<a asp-action="Adopt" asp-route-id="@item.Id" class="btn btn-success btn-sm rounded-pill mt-3">
-							<i class="bi bi-heart"></i> Adopt
-						</a>
+						@if (item.isAvailable)
+						{
+							<a asp-action="Adopt" asp-route-id="@item.Id" class="btn btn-success btn-sm rounded-pill mt-3">
+								<i class="bi bi-heart"></i> Adopt
+							</a>
+						}
 					</div>
 				</div>
 			</div>

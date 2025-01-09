@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "82ikKKaIe8JmldXujEaLjR+S0HkcU4oAADwPo7GVdM4=",
+  "Hash": "TjDAjxND0q9SxUfyo/YBkwgE7KC5gQ70/uVqfNby4y4=",
   "Source": "PetShop.Web",
   "BasePath": "_content/PetShop.Web",
   "Mode": "Default",
@@ -1231,6 +1231,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\wwwroot\\js\\adop-app-edit.js",
+      "SourceId": "PetShop.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\wwwroot\\",
+      "BasePath": "_content/PetShop.Web",
+      "RelativePath": "js/adop-app-edit.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\adop-app-edit.js"
     },
     {
       "Identity": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Web\\wwwroot\\js\\site.js",

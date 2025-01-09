@@ -1,62 +1,104 @@
-﻿@model IEnumerable<PetShop.Domain.Entities.AdoptionApplication>
+﻿@using PetShop.Domain.DTO
+@model IEnumerable<PetShop.Domain.DTO.AdoptionApplicationDTO>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Adoption Applications";
+    IEnumerable<ResponsePetDTO> pets = ViewData["Pets"] as IEnumerable<ResponsePetDTO>;
+    IEnumerable<PetShopApplicationUserDTO> users = ViewData["Users"] as IEnumerable<PetShopApplicationUserDTO>;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Adoption Applications</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Pet)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Applicant.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsValid)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApplicationDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SumOfAdoptionFee)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pet.ImageURL)
-                <br />
-                @Html.DisplayFor(modelItem => item.Pet.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Applicant.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsValid)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApplicationDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SumOfAdoptionFee)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+    <div class="intro-section text-center mb-5">
+        <p class="fs-6">
+            Below is a list of all the adoption applications we've received. You can view details, edit, or delete any of the applications.
+        </p>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover table-striped mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th>Pet</th>
+                    <th>Applicant Email</th>
+                    <th>Valid?</th>
+                    <th>Application Date</th>
+                    <th>Adoption Fee</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    var item = Model.ElementAt(i);
+                    var pet = pets.ElementAtOrDefault(i);
+                    var user = users.ElementAt(i);
+
+                    <tr>
+                        <td>
+                            @if (pet != null)
+                            {
+                                <div class="d-flex align-items-center">
+                                    <img src="@pet.ImageURL" alt="@pet.Name" class="img-thumbnail" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
+                                    <span>@pet.Name</span>
+                                </div>
+                            }
+                            else
+                            {
+                                <span class="text-muted">Unknown Pet</span>
+                            }
+                        </td>
+                        <td>
+                            @if (user != null)
+                            {
+                                @user.Email
+                            }
+                            else
+                            {
+                                <span class="text-muted">Unknown User</span>
+                            }
+                        </td>
+                        <td>@item.IsValid</td>
+                        <td>@item.ApplicationDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                        <td>$@item.SumOfAdoptionFee</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">
+                                <i class="bi bi-pencil-square"></i> Edit
+                            </a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">
+                                <i class="bi bi-info-circle"></i> Details
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">
+                                <i class="bi bi-trash"></i> Delete
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <p class="fs-5 text-muted mt-3">
+        <br />
+        Interested in adopting a pet? Head to the <strong>Pets</strong> section from the menu to see available pets waiting for their forever home!
+    </p>
+</div>
+
+@section Styles {
+    <style>
+        .table th, .table td {
+            vertical-align: middle;
+        }
+
+        .img-thumbnail {
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .btn-sm {
+            font-size: 0.875rem;
+        }
+    </style>
 }
-    </tbody>
-</table>

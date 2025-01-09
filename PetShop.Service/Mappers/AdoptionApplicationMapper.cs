@@ -15,8 +15,9 @@ namespace PetShop.Service.Mappers
         {
             return new AdoptionApplicationDTO
             {
-                ApplicantId = adoptionApplication.Applicant.Id,
-                PetId = adoptionApplication.Pet.Id,
+                Id = adoptionApplication.Id,
+                ApplicantId = adoptionApplication.ApplicantId,
+                PetId = adoptionApplication.PetId,
                 IsValid = adoptionApplication.IsValid,
                 ApplicationDate = adoptionApplication.ApplicationDate,
                 SumOfAdoptionFee = adoptionApplication.SumOfAdoptionFee
@@ -39,6 +40,7 @@ namespace PetShop.Service.Mappers
         {
             return new AdoptionApplication
             {
+                ApplicantId = adoptionApplicationDTO.ApplicantId,
                 Applicant = applicant,
                 PetId = adoptionApplicationDTO.PetId,
                 Pet = pet,

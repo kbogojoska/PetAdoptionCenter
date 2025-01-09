@@ -1,50 +1,141 @@
-﻿@model PetShop.Domain.Entities.AdoptionApplication
+﻿@using PetShop.Domain.DTO
+@using PetShop.Domain.Enum
+@model PetShop.Domain.DTO.AdoptionApplicationDTO
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Application";
+    RequestPetDTO pet = ViewData["Pet"] as RequestPetDTO;
+    PetShopApplicationUserDTO user = ViewData["User"] as PetShopApplicationUserDTO;
+    List<RequestPetDTO> pets = ViewData["Pets"] as List<RequestPetDTO>;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@if (ViewData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger text-center">
+        @ViewData["ErrorMessage"]
+    </div>
+}
+<div class="container mt-4" style="max-width: 800px;">
+    <h1 class="text-center mb-4">Edit Adoption Application</h1>
 
-<h1>Edit</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-warning text-black">
+                    <h4 class="mb-0">Update Application Details</h4>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Applicant</label>
+                        <input class="form-control" value="@((user.Name + " " + user.Surname).ToString())" readonly/>
+                    </div>
 
-<h4>AdoptionApplication</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="PetId" class="control-label"></label>
-                <select asp-for="PetId" class="form-control" asp-items="ViewBag.PetId"></select>
-                <span asp-validation-for="PetId" class="text-danger"></span>
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="ApplicationDate" class="form-label fw-bold">Application Date</label>
+                            <input asp-for="ApplicationDate" class="form-control" />
+                            <span asp-validation-for="ApplicationDate" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" asp-for="IsValid" />
+                            <label class="form-check-label fw-bold" asp-for="IsValid">Is Valid</label>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="SumOfAdoptionFee" class="form-label fw-bold">Sum of Adoption Fee (in $)</label>
+                            <input asp-for="SumOfAdoptionFee" class="form-control" />
+                            <span asp-validation-for="SumOfAdoptionFee" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="PetId" class="form-label fw-bold">Select Pet</label>
+                            <select asp-for="PetId" class="form-control" id="petDropdown">
+                                <option value="" disabled>Select a Pet</option>
+                                @{pets.Add(pet);}
+                                @foreach (var petOption in pets)
+                                {
+                                    <!option value="@petOption.Id" @(pet != null && petOption.Id == pet.Id ? "selected" : "")>
+                                        @petOption.Name
+                                    </!option>
+                                }
+                            </select>
+                        </div>
+
+                        <input type="hidden" asp-for="Id" />
+                        <input type="hidden" asp-for="ApplicantId" />
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success">
+                                <i class="bi bi-check-circle"></i> Save
+                            </button>
+                            <a asp-action="Index" class="btn btn-secondary ms-2">
+                                <i class="bi bi-arrow-left"></i> Back to List
+                            </a>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsValid" /> @Html.DisplayNameFor(model => model.IsValid)
-                </label>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm" id="petInfoCard" style="display: none;">
+                <div class="card-header bg-info text-white">
+                    <h4 class="mb-0 text-center">Pet Information</h4>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-5 text-muted">Pet Image</dt>
+                        <dd class="col-sm-7">
+                            <img id="petImage" src="" alt="Pet Image" class="img-fluid rounded" />
+                        </dd>
+
+                        <dt class="col-sm-5 text-muted">Type of animal</dt>
+                        <dd class="col-sm-7" id="petType"></dd>
+
+                        <dt class="col-sm-5 text-muted">Name</dt>
+                        <dd class="col-sm-7" id="petName"></dd>
+
+                        <dt class="col-sm-5 text-muted">Weight</dt>
+                        <dd class="col-sm-7" id="petWeight"></dd>
+
+                        <dt class="col-sm-5 text-muted">Age</dt>
+                        <dd class="col-sm-7" id="petAge"></dd>
+
+                        <dt class="col-sm-5 text-muted">Breed</dt>
+                        <dd class="col-sm-7" id="petBreed"></dd>
+
+                        <dt class="col-sm-5 text-muted">Adoption Fee</dt>
+                        <dd class="col-sm-7" id="petPrice"></dd>
+                    </dl>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="ApplicationDate" class="control-label"></label>
-                <input asp-for="ApplicationDate" class="form-control" />
-                <span asp-validation-for="ApplicationDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SumOfAdoptionFee" class="control-label"></label>
-                <input asp-for="SumOfAdoptionFee" class="form-control" />
-                <span asp-validation-for="SumOfAdoptionFee" class="text-danger"></span>
-            </div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/adop-app-edit.js"></script>
+    <script>
+        const pets = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(pets));
+
+        document.getElementById('petDropdown').addEventListener('change', function () {
+            const selectedPetId = this.value;
+            console.log('Pet dropdown change triggered with value:', selectedPetId);
+            updatePetInfo(selectedPetId, pets); 
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const preselectedPetId = '@Model.PetId'; 
+            if (preselectedPetId) {
+                updatePetInfo(preselectedPetId, pets);
+            }
+        });
+    </script>
 }
+
+
+

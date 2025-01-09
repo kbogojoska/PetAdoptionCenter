@@ -31,11 +31,17 @@ namespace PetShop.Service.Implementation
             return pet.toResponsePetDto();
         }
 
-        public List<RequestPetDTO> FindAll()
+        public List<RequestPetDTO> FindAll(bool? isAvailable=null)
         {
-            return petRepository.GetAll()
+            var pets = petRepository.GetAll()
                                 .Select(pet => pet.toRequestPetDto())
                                 .ToList();
+            if(isAvailable == true)
+            {
+                return pets.Where(p => p.isAvailable== true).ToList();
+            }
+
+            return pets;
         }
 
 
@@ -45,7 +51,7 @@ namespace PetShop.Service.Implementation
             return pet.toRequestPetDto();
         }
 
-        public List<RequestPetDTO> FindByShelter(Guid shelterId)
+        public List<RequestPetDTO> FindByShelter(Guid shelterId, bool? isAvailable)
         {
             if (shelterId == Guid.Empty)
             {
@@ -54,23 +60,33 @@ namespace PetShop.Service.Implementation
 
             var pets = petRepository.FindBy(p => p.ShelterOfResidenceId == shelterId);
 
+			if (isAvailable == true)
+			{
+				pets = pets.Where(p => p.isAvailable == true);
+			}
 
-            return pets.Select(pet => pet.toRequestPetDto()).ToList();
+			return pets.Select(pet => pet.toRequestPetDto()).ToList();
         }
 
-        public List<RequestPetDTO> FindByCity(string city)
+        public List<RequestPetDTO> FindByCity(string city, bool? isAvailable)
         {
             if (city == null)
             {
                 throw new ArgumentException("Invalid search by city.");
             }
 
-            var petsToReturn = petRepository.GetAll().Where(p => p.ShelterOfResidence.City == city).ToList();
-            return petsToReturn.Select(pet => pet.toRequestPetDto()).ToList();
+            var petsToReturn = petRepository.GetAll().Where(p => p.ShelterOfResidence.City == city);
+
+			if (isAvailable == true)
+			{
+				petsToReturn = petsToReturn.Where(p => p.isAvailable == true);
+			}
+
+			return petsToReturn.Select(pet => pet.toRequestPetDto()).ToList();
 
         }
 
-        public ResponsePetDTO Store(RequestPetDTO requestPetDto) // add the pet in the shelter list too
+        public ResponsePetDTO Store(RequestPetDTO requestPetDto) 
         {
             var shelter = shelterRepository.Get(requestPetDto.ShelterOfResidenceId) ?? throw new Exception("Shelter not found.");
             Pet pet = requestPetDto.ToPet(shelter);
@@ -79,7 +95,8 @@ namespace PetShop.Service.Implementation
 			{
 				shelter.Pets = new HashSet<Pet>();
 			}
-			shelter.Pets.Add(pet); petRepository.Insert(pet);
+			shelter.Pets.Add(pet);
+            petRepository.Insert(pet);
 
             return pet.toResponsePetDto();
         }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+using PetShop.Domain.Entities;
 
 namespace PetShop.Domain.Identity
 {
@@ -27,5 +28,7 @@ namespace PetShop.Domain.Identity
 
         [Required]
         public string? Address { get; set; }
+        public virtual ICollection<AdoptionApplication>? AdoptionApplications { get; set; } = new HashSet<AdoptionApplication>();
+
     }
 }

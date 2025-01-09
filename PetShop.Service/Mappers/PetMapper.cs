@@ -31,6 +31,26 @@ namespace PetShop.Service.Mappers
             };
         }
 
+        public static ResponsePetDTO toResponsePetDto(this RequestPetDTO pet)
+        {
+            return new ResponsePetDTO
+            {
+                Name = pet.Name,
+                Weight = pet.Weight,
+                Size = pet.Size,
+                Age = pet.Age,
+                Gender = pet.Gender,
+                Breed = pet.Breed ?? "",
+                About = pet.About ?? "",
+                Type = pet.Type,
+                HealthInformation = pet.HealthInformation ?? "",
+                ImageURL = pet.ImageURL,
+                PriceForAdoption = pet.PriceForAdoption,
+                isAvailable = pet.isAvailable,
+                ShelterOfResidenceId = pet.ShelterOfResidenceId
+            };
+        }
+
         public static RequestPetDTO toRequestPetDto(this Pet pet)
         {
             return new RequestPetDTO
