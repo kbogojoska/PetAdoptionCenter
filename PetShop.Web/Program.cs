@@ -36,7 +36,11 @@ builder.Services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
 builder.Services.AddScoped<IShelterService, ShelterService>();
 builder.Services.AddScoped<IAdoptionApplicationService, AdoptionApplicationService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IAdminService, AdminService>();
 builder.Services.AddScoped<IPetService, PetService>();
+
+builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
+	options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
@@ -44,7 +48,6 @@ builder.Logging.AddDebug();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
@@ -52,7 +55,6 @@ if (app.Environment.IsDevelopment())
 else
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
