@@ -25,14 +25,14 @@ namespace PetShop.Web.Controllers.API
 			return _adminService.FindAll();
 		}
 
-		[HttpGet("AdoptionApplication/{id}")]
-		public AdminResponseAdoptionApplicationDTO GetAdoptionApplication(String? id)
+		[HttpPost("[action]")]
+		public AdminResponseAdoptionApplicationDTO GetAdoptionApplication(BaseEntity model)
 		{
-			if (string.IsNullOrEmpty(id))
+			if (model == null || model.Id == null)
 			{
-				throw new ArgumentNullException(nameof(id), "ID cannot be null or empty");
+				throw new ArgumentNullException("ID or model cannot be null or empty");
 			}
-			return _adminService.FindById(id);
+			return _adminService.FindById(model.Id.ToString());
 		}
 
 	}

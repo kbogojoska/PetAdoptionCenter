@@ -15,13 +15,15 @@ namespace PetShop.Service.Implementation
 	{
 		private readonly IAdoptionApplicationService adoptionApplicationService;
 		private readonly IUserService userService;
+		private readonly IShelterService shelterService;
 		private readonly IPetService petService;
 
-		public AdminService(IAdoptionApplicationService adoptionApplicationService, IUserService userService, IPetService petService)
+		public AdminService(IAdoptionApplicationService adoptionApplicationService, IUserService userService, IPetService petService, IShelterService shelterService)
 		{
 			this.adoptionApplicationService = adoptionApplicationService;
 			this.userService = userService;
 			this.petService = petService;
+			this.shelterService = shelterService;
 		}
 
 		public List<AdminResponseAdoptionApplicationDTO> FindAll()
@@ -30,11 +32,23 @@ namespace PetShop.Service.Implementation
 			{
 				var pet = petService.FindById(s.PetId).toResponsePetDto();
 				var user = userService.FindById(s.ApplicantId);
+				var shelter = shelterService.FindById(pet.ShelterOfResidenceId.ToString());
+
+				if (user == null || pet == null || shelter == null) 
+				{
+					throw new NullReferenceException("Object cannot be null");
+				}
+				
 				return new AdminResponseAdoptionApplicationDTO
 				{
 					Id = s.Id,
 					PetId = s.PetId,
 					Pet = pet,
+					ShelterId = pet.ShelterOfResidenceId,
+					ShelterCityOfOperation = shelter.City,
+					ShelterName = shelter.Name,
+					ShelterAddress = shelter.Address,
+					ShelterPhoneNumber = shelter.PhoneNumber,
 					ApplicantId = s.ApplicantId,
 					ApplicantName = user.Name,
 					ApplicantSurname = user.Surname,
@@ -45,9 +59,7 @@ namespace PetShop.Service.Implementation
 					IsValid = s.IsValid,
 					ApplicationDate = s.ApplicationDate,
 					SumOfAdoptionFee = s.SumOfAdoptionFee
-
 				};
-				
 			}).ToList();
 		}
 
@@ -67,11 +79,23 @@ namespace PetShop.Service.Implementation
 
 			var pet = petService.FindById(adoptionApplication.PetId).toResponsePetDto();
 			var user = userService.FindById(adoptionApplication.ApplicantId);
+			var shelter = shelterService.FindById(pet.ShelterOfResidenceId.ToString());
+
+			if (user == null || pet == null || shelter == null)
+			{
+				throw new NullReferenceException("Object cannot be null");
+			}
+
 			return new AdminResponseAdoptionApplicationDTO
 			{
 				Id = adoptionApplication.Id,
 				PetId = adoptionApplication.PetId,
 				Pet = pet,
+				ShelterId = pet.ShelterOfResidenceId,
+				ShelterCityOfOperation = shelter.City,
+				ShelterName = shelter.Name,
+				ShelterAddress = shelter.Address,
+				ShelterPhoneNumber = shelter.PhoneNumber,
 				ApplicantId = adoptionApplication.ApplicantId,
 				ApplicantName = user.Name,
 				ApplicantSurname = user.Surname,
@@ -82,7 +106,6 @@ namespace PetShop.Service.Implementation
 				IsValid = adoptionApplication.IsValid,
 				ApplicationDate = adoptionApplication.ApplicationDate,
 				SumOfAdoptionFee = adoptionApplication.SumOfAdoptionFee
-
 			};
 		}
 	}

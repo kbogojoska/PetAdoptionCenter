@@ -1,21 +1,15 @@
 [
   {
     "ContainingType": "PetShop.Web.Controllers.API.AdminController",
-    "Method": "GetAdoptionApplication",
-    "RelativePath": "api/Admin/AdoptionApplication",
+    "Method": "GetAllAdoptionApplications",
+    "RelativePath": "api/Admin",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "PetShop.Domain.DTO.AdminResponseAdoptionApplicationDTO",
+        "Type": "System.Collections.Generic.List\u00601[[PetShop.Domain.DTO.AdminResponseAdoptionApplicationDTO, PetShop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -36,6 +30,32 @@
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.List\u00601[[PetShop.Domain.DTO.AdminResponseAdoptionApplicationDTO, PetShop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PetShop.Web.Controllers.API.AdminController",
+    "Method": "GetAdoptionApplication",
+    "RelativePath": "api/Admin/GetAdoptionApplication",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "PetShop.Domain.Entities.BaseEntity",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "PetShop.Domain.DTO.AdminResponseAdoptionApplicationDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
