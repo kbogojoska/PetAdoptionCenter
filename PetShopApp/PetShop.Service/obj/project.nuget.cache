@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QaipKJh7Q2YSoHgifDGR4j2PON924UFUOO8y7uYiOuxTXI1UiAb4xZLRgCTGaowdbplIilCdzn+SDHf2AnIEWA==",
+  "dgSpecHash": "dlwa28tnrepakay39VjFQdQo0N+ZDLZIslGV0lc2pFjQyY8YutWoTe+CLY9oj/zwmr6grle9aE9jrMM1+XUfoA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShop.Service\\PetShop.Service.csproj",
+  "projectFilePath": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShopApp\\PetShop.Service\\PetShop.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kater\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\kater\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

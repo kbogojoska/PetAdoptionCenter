@@ -23,8 +23,6 @@ namespace PetShop.Domain.Entities
         public DateTime ApplicationDate { get; set; } = DateTime.UtcNow;
         [Required]
         public double SumOfAdoptionFee { get; set; }
-        // public string? DocumentPath { get; set; }
-
         public bool IsValidApplication()
         {
             return Applicant.Age >= 18 && Pet.isAvailable;

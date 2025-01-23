@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopAdminApp\\PetShopAdminApp\\PetShopAdminApp.csproj": {}
+    "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShopAdminApp\\PetShopAdminApp\\PetShopAdminApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopAdminApp\\PetShopAdminApp\\PetShopAdminApp.csproj": {
+    "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShopAdminApp\\PetShopAdminApp\\PetShopAdminApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopAdminApp\\PetShopAdminApp\\PetShopAdminApp.csproj",
+        "projectUniqueName": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShopAdminApp\\PetShopAdminApp\\PetShopAdminApp.csproj",
         "projectName": "PetShopAdminApp",
-        "projectPath": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopAdminApp\\PetShopAdminApp\\PetShopAdminApp.csproj",
+        "projectPath": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShopAdminApp\\PetShopAdminApp\\PetShopAdminApp.csproj",
         "packagesPath": "C:\\Users\\kater\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopAdminApp\\PetShopAdminApp\\obj\\",
+        "outputPath": "C:\\Users\\kater\\Desktop\\Faks\\6_semestar\\IS\\seminarska-IS\\PetShopApp\\PetShopAdminApp\\PetShopAdminApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kater\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +45,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "GemBox.Document": {
+              "target": "Package",
+              "version": "[35.0.1946, )"
+            },
             "Microsoft.AspNet.WebApi.Client": {
               "target": "Package",
               "version": "[6.0.0, )"
