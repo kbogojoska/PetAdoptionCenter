@@ -1,0 +1,105 @@
+﻿@model PetShop.Domain.DTO.RequestPetDTO
+
+@{
+	ViewData["Title"] = "Delete";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container mt-4">
+	<h1 class="text-danger">Delete Pet</h1>
+	<div class="alert alert-warning">
+		<strong>Warning!</strong> This action is irreversible. Please be sure before proceeding.
+	</div>
+	<hr />
+
+	<div class="row">
+		<div class="col-md-6">
+			<h4>Pet Details</h4>
+			<dl class="row">
+				<dt class="col-sm-4">
+					@Html.DisplayNameFor(model => model.Name)
+				</dt>
+				<dd class="col-sm-8">
+					@Html.DisplayFor(model => model.Name)
+				</dd>
+				<dt class="col-sm-4">
+					@Html.DisplayNameFor(model => model.Weight)
+				</dt>
+				<dd class="col-sm-8">
+					@Html.DisplayFor(model => model.Weight)
+				</dd>
+				<dt class="col-sm-4">
+					@Html.DisplayNameFor(model => model.Size)
+				</dt>
+				<dd class="col-sm-8">
+					@Html.DisplayFor(model => model.Size)
+				</dd>
+				<dt class="col-sm-4">
+					@Html.DisplayNameFor(model => model.Age)
+				</dt>
+				<dd class="col-sm-8">
+					@Html.DisplayFor(model => model.Age)
+				</dd>
+				<dt class="col-sm-4">
+					@Html.DisplayNameFor(model => model.Gender)
+				</dt>
+				<dd class="col-sm-8">
+					@Html.DisplayFor(model => model.Gender)
+				</dd>
+				<dt class="col-sm-4">
+					@Html.DisplayNameFor(model => model.Breed)
+				</dt>
+				<dd class="col-sm-8">
+					@Html.DisplayFor(model => model.Breed)
+				</dd>
+				<dt class="col-sm-4">
+					@Html.DisplayNameFor(model => model.About)
+				</dt>
+				<dd class="col-sm-8">
+					@Html.DisplayFor(model => model.About)
+				</dd>
+				<dt class="col-sm-4">
+					@Html.DisplayNameFor(model => model.Type)
+				</dt>
+				<dd class="col-sm-8">
+					@Html.DisplayFor(model => model.Type)
+				</dd>
+				<dt class="col-sm-4">
+					@Html.DisplayNameFor(model => model.HealthInformation)
+				</dt>
+				<dd class="col-sm-8">
+					@Html.DisplayFor(model => model.HealthInformation)
+				</dd>
+				<dt class="col-sm-4">
+					@Html.DisplayNameFor(model => model.ImageURL)
+				</dt>
+				<dd class="col-sm-8">
+					@Html.DisplayFor(model => model.ImageURL)
+				</dd>
+				<dt class="col-sm-4">
+					@Html.DisplayNameFor(model => model.PriceForAdoption)
+				</dt>
+				<dd class="col-sm-8">
+					@Html.DisplayFor(model => model.PriceForAdoption)
+				</dd>
+				<dt class="col-sm-4">
+					@Html.DisplayNameFor(model => model.isAvailable)
+				</dt>
+				<dd class="col-sm-8">
+					@Html.DisplayFor(model => model.isAvailable)
+				</dd>
+			</dl>
+		</div>
+	</div>
+
+	<div class="d-flex flex-column" style="min-height: 200px;">
+
+		<form asp-action="Delete">
+			<input type="hidden" asp-for="Id" />
+			<div class="form-group">
+				<input type="submit" value="Delete Pet" class="btn btn-danger btn-md" />
+				<a asp-action="Index" class="btn btn-secondary btn-md">Cancel</a>
+			</div>
+		</form>
+	</div>
+</div>
+

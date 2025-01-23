@@ -1,0 +1,50 @@
+﻿@model PetShop.Domain.DTO.ShelterDTO
+
+@{
+    ViewData["Title"] = "Delete Shelter";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container mt-4">
+    <h1 class="text-danger">Delete Shelter</h1>
+    <div class="alert alert-warning">
+        <strong>Warning!</strong> This action is irreversible. Please be sure before proceeding.
+        <br/>
+@*         <strong>Deleting this shelter will result in deleting all the pets associated with this shelter!</strong>
+ *@    </div>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Shelter Details</h4>
+            <dl class="row">
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.City)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.City)</dd>
+
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Name)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Name)</dd>
+
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Address)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Address)</dd>
+
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Capacity)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Capacity)</dd>
+
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.AvailableSpaces)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.AvailableSpaces)</dd>
+
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.PhoneNumber)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.PhoneNumber)</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="d-flex flex-column" style="min-height: 200px;">
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <input type="submit" value="Delete Shelter" class="btn btn-danger btn-md" />
+                <a asp-action="Index" class="btn btn-secondary btn-md">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

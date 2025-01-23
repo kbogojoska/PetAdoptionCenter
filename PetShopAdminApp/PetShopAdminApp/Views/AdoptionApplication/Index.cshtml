@@ -1,0 +1,97 @@
+﻿@using PetShopAdminApp.Models
+@model List<PetShopAdminApp.Models.AdoptionApplication>
+
+@{
+    ViewData["Title"] = "Adoption Applications";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Adoption Applications</h1>
+
+    <div class="intro-section text-center mb-5">
+        <p class="fs-6">
+            Below is a list of all the adoption applications we've received.
+        </p>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover table-striped mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th>Pet</th>
+                    <th>Applicant Email</th>
+                    <th>Valid?</th>
+                    <th>ShelterName</th>
+                    <th>Application Date</th>
+                    <th>Adoption Fee</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    var item = Model.ElementAt(i);
+                    var pet = item.Pet;
+                    var user = item.User;
+                    var shelter = item.Shelter;
+
+                    <tr>
+                        <td>@shelter.Name</td>
+                        <td>
+                            @if (pet != null)
+                            {
+                                <div class="d-flex align-items-center">
+                                    <img src="@pet.ImageURL" alt="@pet.Name" class="img-thumbnail" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px;">
+                                    <span>@pet.Name</span>
+                                </div>
+                            }
+                            else
+                            {
+                                <span class="text-muted">Unknown Pet</span>
+                            }
+                        </td>
+                        <td>
+                            @if (user != null)
+                            {
+                                @user.Email
+                            }
+                            else
+                            {
+                                <span class="text-muted">Unknown User</span>
+                            }
+                        </td>
+                        <td>@item.IsValid</td>
+                        <td>@item.ApplicationDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                        <td>$@item.SumOfAdoptionFee</td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">
+                                <i class="bi bi-info-circle"></i> Details
+                            </a>
+                            <a asp-action="CreateInvoice" asp-route-id="@item.Id" class="btn btn-info btn-sm">
+                                <i class="bi bi-info-circle"></i> Create Invoice
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .table th, .table td {
+            vertical-align: middle;
+        }
+
+        .img-thumbnail {
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .btn-sm {
+            font-size: 0.875rem;
+        }
+    </style>
+}

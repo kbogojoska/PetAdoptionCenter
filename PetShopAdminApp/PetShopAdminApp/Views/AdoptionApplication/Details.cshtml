@@ -1,0 +1,113 @@
+﻿@using PetShopAdminApp.Models
+@model PetShopAdminApp.Models.AdoptionApplication
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center text-primary">Application Details</h1>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4 d-flex justify-content-center align-items-start" style="padding-top: 110px;">
+            <div class="card" style="overflow: hidden; width: 100%;">
+                <img src="@Model.Pet.ImageURL" class="card-img" alt="Pet Image" style="max-height: 300px; object-fit: cover;">
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="card" style="background-color: #f8f9fa; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px;">
+                <div class="card-body">
+
+                    <h4 class="card-title text-center">Application Information</h4>
+                    <hr />
+
+                    <h5 class="text-primary mt-4">Application Details</h5>
+                    <dl class="row">
+                        <dt class="col-sm-4 text-muted">Application Date</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.ApplicationDate)</dd>
+
+                        <dt class="col-sm-4 text-muted">Is the adoption application valid?</dt>
+                        <dd class="col-sm-8">@((Model.IsValid) ? "Yes" : "No")</dd>
+
+                        <dt class="col-sm-4 text-muted">Adoption Fee</dt>
+                        <dd class="col-sm-8">$@Html.DisplayFor(model => model.SumOfAdoptionFee)</dd>
+                    </dl>
+
+                    <h5 class="text-primary">Applicant Information</h5>
+                    <dl class="row">
+                        <dt class="col-sm-4 text-muted">Applicant Name</dt>
+                        <dd class="col-sm-8">@Model.User.Name @Model.User.Surname</dd>
+
+                        <dt class="col-sm-4 text-muted">Email</dt>
+                        <dd class="col-sm-8">@Model.User.Email</dd>
+
+                        <dt class="col-sm-4 text-muted">Contact Phone</dt>
+                        <dd class="col-sm-8">@Model.User.ContactPhoneNumber</dd>
+
+                        <dt class="col-sm-4 text-muted">Address</dt>
+                        <dd class="col-sm-8">@Model.User.Address</dd>
+
+                        <dt class="col-sm-4 text-muted">Age</dt>
+                        <dd class="col-sm-8">@Model.User.Age</dd>
+                    </dl>
+
+                    <h5 class="text-primary mt-4">Pet Information</h5>
+                    <dl class="row">
+                        <dt class="col-sm-4 text-muted">Pet Name</dt>
+                        <dd class="col-sm-8">@Model.Pet.Name</dd>
+
+                        <dt class="col-sm-4 text-muted">Breed</dt>
+                        <dd class="col-sm-8">@Model.Pet.Breed</dd>
+
+                        <dt class="col-sm-4 text-muted">Gender</dt>
+                        <dd class="col-sm-8">@Model.Pet.Gender</dd>
+
+                        <dt class="col-sm-4 text-muted">Type</dt>
+                        <dd class="col-sm-8">@Model.Pet.Type</dd>
+
+                        <dt class="col-sm-4 text-muted">Age</dt>
+                        <dd class="col-sm-8">@Model.Pet.Age years</dd>
+
+                        <dt class="col-sm-4 text-muted">Weight</dt>
+                        <dd class="col-sm-8">@Model.Pet.Weight kg</dd>
+
+                        <dt class="col-sm-4 text-muted">Size</dt>
+                        <dd class="col-sm-8">@Model.Pet.Size</dd>
+
+                        <dt class="col-sm-4 text-muted">Health Information</dt>
+                        <dd class="col-sm-8">@Model.Pet.HealthInformation</dd>
+
+                        <dt class="col-sm-4 text-muted">About Pet</dt>
+                        <dd class="col-sm-8">@Model.Pet.About</dd>
+
+                        <dt class="col-sm-4 text-muted">Available for Adoption?</dt>
+                        <dd class="col-sm-8">@((Model.Pet.isAvailable) ? "Yes" : "No")</dd>
+                    </dl>
+
+                     <h5 class="text-primary mt-4">Shelter Information</h5>
+                    <dl class="row">
+                        <dt class="col-sm-4 text-muted">Shelter Name</dt>
+                        <dd class="col-sm-8">@Model.Shelter.Name</dd>
+
+                        <dt class="col-sm-4 text-muted">City of Operation</dt>
+                        <dd class="col-sm-8">@Model.Shelter.CityOfOperation</dd>
+
+                        <dt class="col-sm-4 text-muted">Address</dt>
+                        <dd class="col-sm-8">@Model.Shelter.Address</dd>
+
+                        <dt class="col-sm-4 text-muted">Contact</dt>
+                        <dd class="col-sm-8">@Model.Shelter.PhoneNumber</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col text-right">
+            <a asp-action="Index" class="btn btn-secondary btn-md mx-2">Back to List</a>
+        </div>
+    </div>
+</div>

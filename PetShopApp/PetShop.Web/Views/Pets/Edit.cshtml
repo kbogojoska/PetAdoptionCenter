@@ -1,0 +1,142 @@
+﻿@model PetShop.Domain.DTO.RequestPetDTO
+
+@{
+    IEnumerable<PetShop.Domain.DTO.ShelterDTO> shelters = ViewData["Shelters"] as IEnumerable<PetShop.Domain.DTO.ShelterDTO>;
+    ViewData["Title"] = "Edit Pet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4" style="max-width: 800px;">
+    <h1 class="text-center mb-4">Edit Pet</h1>
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-warning text-black">
+            <h4 class="mb-0">Update Pet Details</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label fw-bold">Name</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Weight" class="form-label fw-bold">Weight</label>
+                    <input asp-for="Weight" class="form-control" />
+                    <span asp-validation-for="Weight" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Size" class="form-label fw-bold">Size</label>
+                    <select asp-for="Size" class="form-control">
+                        <option value="" disabled selected>Select a Size</option>
+                        @foreach (var size in ViewData["Sizes"] as List<PetShop.Domain.Enum.SizeOfAnimal>)
+                        {
+                            <!option value="@size" @(size == Model.Size ? "selected" : "")>@size</!option>
+                        }
+                    </select>
+                    <span asp-validation-for="Size" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Age" class="form-label fw-bold">Age</label>
+                    <input asp-for="Age" type="number" min="0" class="form-control" />
+                    <span asp-validation-for="Age" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Gender" class="form-label fw-bold">Gender</label>
+                    <select asp-for="Gender" class="form-control">
+                        <option value="" disabled selected>Select a Gender</option>
+                        @foreach (var gender in ViewData["Genders"] as List<PetShop.Domain.Enum.GenderType>)
+                        {
+                            <!option value="@gender" @(gender == Model.Gender ? "selected" : "")>@gender</!option>
+                        }
+                    </select>
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Breed" class="form-label fw-bold">Breed</label>
+                    <input asp-for="Breed" class="form-control" />
+                    <span asp-validation-for="Breed" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="About" class="form-label fw-bold">About</label>
+                    <input asp-for="About" class="form-control" />
+                    <span asp-validation-for="About" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Type" class="form-label fw-bold">Type</label>
+                    <select asp-for="Type" class="form-control">
+                        <option value="" disabled selected>Select a Type</option>
+                        @foreach (var type in ViewData["Types"] as List<PetShop.Domain.Enum.AnimalType>)
+                        {
+                            <!option value="@type" @(type == Model.Type ? "selected" : "")>@type</!option>
+                        }
+                    </select>
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="HealthInformation" class="form-label fw-bold">Health Information</label>
+                    <input asp-for="HealthInformation" class="form-control" />
+                    <span asp-validation-for="HealthInformation" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ImageURL" class="form-label fw-bold">Image URL</label>
+                    <input asp-for="ImageURL" class="form-control" />
+                    <span asp-validation-for="ImageURL" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="PriceForAdoption" class="form-label fw-bold">Price for Adoption</label>
+                    <input asp-for="PriceForAdoption" class="form-control" />
+                    <span asp-validation-for="PriceForAdoption" class="text-danger"></span>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" asp-for="isAvailable" />
+                    <label class="form-check-label fw-bold" asp-for="isAvailable">Available for Adoption</label>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ShelterOfResidenceId" class="form-label fw-bold">Shelter of Residence</label>
+                    <select asp-for="ShelterOfResidenceId" class="form-control">
+                        <option value="" disabled>Select a Shelter</option>
+                        @foreach (var shelter in shelters)
+                        {
+                            <!option value="@shelter.Id" @(shelter.Id == Model.ShelterOfResidenceId ? "selected" : "")>
+                                @shelter.Name
+                            </!option>
+                        }
+                    </select>
+                    <span asp-validation-for="ShelterOfResidenceId" class="text-danger"></span>
+                </div>
+
+                <input type="hidden" asp-for="Id" />
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success">
+                        <i class="bi bi-check-circle"></i> Save
+                    </button>
+                    <a asp-action="Index" class="btn btn-secondary ms-2">
+                        <i class="bi bi-arrow-left"></i> Back to List
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

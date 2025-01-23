@@ -1,0 +1,144 @@
+﻿@using PetShop.Domain.DTO
+@model PetShop.Domain.DTO.AdoptionApplicationDTO
+
+@{
+	ViewData["Title"] = "Delete Application";
+	ResponsePetDTO pet = ViewData["Pet"] as ResponsePetDTO;
+	PetShopApplicationUserDTO user = ViewData["User"] as PetShopApplicationUserDTO;
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+	<h1 class="text-danger">Delete Application</h1>
+	<div class="alert alert-warning">
+		<strong>Warning!</strong> This action is irreversible. Please be sure before proceeding.
+	</div>
+	<hr />
+
+	<div class="row">
+		<div class="col-md-3">
+			<h4>Application Details</h4>
+			<dl class="row">
+				<dt class="col-sm-5 mt-2 text-nowrap">
+					Application Date
+				</dt>
+
+				<dd class="col-sm-7 mt-2">
+					@Html.DisplayFor(model => model.ApplicationDate)
+				</dd>
+
+				<dt class="col-sm-9 mt-2 text-nowrap">
+					Is adoption application Valid?
+				</dt>
+				<dd class="col-sm-3 mt-2">
+					@((Model.IsValid) ? "Yes" : "No")
+				</dd>
+
+				<dt class="col-sm-5 mt-2 text-nowrap">
+					Adoption Fee
+				</dt>
+				<dd class="col-sm-7 mt-2">
+					$@Html.DisplayFor(model => model.SumOfAdoptionFee)
+				</dd>
+			</dl>
+		</div>
+
+		<div class="col-md-1 d-flex justify-content-center align-items-center">
+			<div style="width: 1px; height: 100%; background-color: #ccc;"></div>
+		</div>
+
+		<div class="col-md-3">
+			<h4>Applicant Details</h4>
+			<dl>
+				<dt class="col-sm-4 mt-2 text-nowrap">
+					Applicant email
+				</dt>
+				<dd class="col-sm-8 mt-2">
+					@user.Email
+				</dd>
+
+				<dt class="col-sm-4 mt-2 text-nowrap">
+					Applicant name
+				</dt>
+				<dd class="col-sm-8 mt-2">
+					@user.Name
+				</dd>
+
+				<dt class="col-sm-4 mt-2 text-nowrap">
+					Applicant surname
+				</dt>
+				<dd class="col-sm-8 mt-2">
+					@user.Surname
+				</dd>
+
+				<dt class="col-sm-4 mt-2 text-nowrap">
+					Applicant age
+				</dt>
+				<dd class="col-sm-8 mt-2">
+					@user.Age
+				</dd>
+
+				<dt class="col-sm-4 mt-2 text-nowrap">
+					Applicant contact
+				</dt>
+				<dd class="col-sm-8 mt-2">
+					@user.ContactPhoneNumber
+				</dd>
+			</dl>
+		</div>
+
+		<div class="col-md-1 d-flex justify-content-center align-items-center">
+			<div style="width: 1px; height: 100%; background-color: #ccc;"></div>
+		</div>
+
+		<div class="col-md-3">
+			<h4>Pet Details</h4>
+			<dl class="row">
+				<dt class="col-sm-4 mt-2 text-nowrap">
+					Pet Image
+				</dt>
+				<dd class="col-sm-8 mt-2">
+					<img src="@pet.ImageURL" alt="Pet Image" style="max-width: 100%; max-height: 200px;" />
+				</dd>
+
+				<dt class="col-sm-4 mt-2 text-nowrap">
+					Pet Name
+				</dt>
+				<dd class="col-sm-8 mt-2">
+					@pet.Name
+				</dd>
+
+				<dt class="col-sm-4 mt-2 text-nowrap">
+					Pet Breed
+				</dt>
+				<dd class="col-sm-8 mt-2">
+					@pet.Breed
+				</dd>
+
+				<dt class="col-sm-4 mt-2 text-nowrap">
+					Pet Age
+				</dt>
+				<dd class="col-sm-8 mt-2">
+					@pet.Age
+				</dd>
+
+				<dt class="col-sm-4 mt-2 text-nowrap">
+					Pet Gender
+				</dt>
+				<dd class="col-sm-8 mt-2">
+					@pet.Gender
+				</dd>
+			</dl>
+		</div>
+	</div>
+
+	<div class="d-flex flex-column mt-4">
+		<form asp-action="Delete">
+			<input type="hidden" asp-for="Id" />
+			<div class="form-group">
+				<input type="submit" value="Delete Application" class="btn btn-danger btn-md" />
+				<a asp-action="Index" class="btn btn-secondary btn-md">Cancel</a>
+			</div>
+		</form>
+	</div>
+</div>

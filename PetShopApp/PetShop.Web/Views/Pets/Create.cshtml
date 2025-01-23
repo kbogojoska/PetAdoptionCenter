@@ -1,0 +1,144 @@
+﻿@model PetShop.Domain.DTO.RequestPetDTO
+@using PetShop.Domain.Enum
+@using PetShop.Domain.DTO
+
+@{
+    IEnumerable<ShelterDTO> shelters = ViewData["Shelters"] as IEnumerable<ShelterDTO>;
+    IEnumerable<AnimalType> types = ViewData["AnimalTypes"] as IEnumerable<AnimalType>;
+    IEnumerable<GenderType> genders = ViewData["Genders"] as IEnumerable<GenderType>;
+    IEnumerable<SizeOfAnimal> sizes = ViewData["Sizes"] as IEnumerable<SizeOfAnimal>;
+
+    if (shelters == null || sizes == null || types == null || genders == null)
+    {
+        <div class="alert alert-danger">
+            One or more ViewData properties are null!
+        </div>
+    }
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center mb-4">Create a New Pet</h1>
+<p class="text-center text-muted">Fill in the details to add a new pet.</p>
+
+<hr />
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-4"></div>
+
+            <div class="card shadow-sm p-4">
+                <h4 class="mb-3">Pet Information</h4>
+
+                <div class="form-group">
+                    <label asp-for="Name" class="form-label">Name</label>
+                    <input asp-for="Name" class="form-control" placeholder="Enter pet name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Weight" class="form-label">Weight (kg)</label>
+                    <input asp-for="Weight" class="form-control" placeholder="Enter pet weight" />
+                    <span asp-validation-for="Weight" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Size" class="form-label">Size</label>
+                    <select asp-for="Size" class="form-control">
+                        @foreach (var size in sizes)
+                        {
+                            <option value="@((int)size)">@size</option>
+                        }
+                    </select>
+                    <span asp-validation-for="Size" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Age" class="form-label">Age</label>
+                    <input asp-for="Age" class="form-control" type="number" min="0" placeholder="Enter pet age" />
+                    <span asp-validation-for="Age" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Gender" class="form-label">Gender</label>
+                    <select asp-for="Gender" class="form-control">
+                        @foreach (var gender in genders)
+                        {
+                            <option value="@((int)gender)">@gender</option>
+                        }
+                    </select>
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Breed" class="form-label">Breed</label>
+                    <input asp-for="Breed" class="form-control" placeholder="Enter pet breed" />
+                    <span asp-validation-for="Breed" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="About" class="form-label">About</label>
+                    <input asp-for="About" class="form-control" placeholder="Enter details about the pet" />
+                    <span asp-validation-for="About" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Type" class="form-label">Type</label>
+                    <select asp-for="Type" class="form-control">
+                        @foreach (var type in types)
+                        {
+                            <option value="@((int)type)">@type</option>
+                        }
+                    </select>
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="HealthInformation" class="form-label">Health Information</label>
+                    <input asp-for="HealthInformation" class="form-control" placeholder="Enter health information" />
+                    <span asp-validation-for="HealthInformation" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ImageURL" class="form-label">Image URL</label>
+                    <input asp-for="ImageURL" class="form-control" placeholder="Enter image URL" />
+                    <span asp-validation-for="ImageURL" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PriceForAdoption" class="form-label">Price for Adoption ($)</label>
+                    <input asp-for="PriceForAdoption" class="form-control" placeholder="Enter adoption price" />
+                    <span asp-validation-for="PriceForAdoption" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ShelterOfResidenceId" class="form-label">Shelter of Residence</label>
+                    <select asp-for="ShelterOfResidenceId" class="form-control">
+                        @foreach (var shelter in shelters)
+                        {
+                            <option value="@shelter.Id">@shelter.Name</option>
+                        }
+                    </select>
+                    <span asp-validation-for="ShelterOfResidenceId" class="text-danger"></span>
+                </div>
+
+                <div class="form-check">
+                    <input asp-for="isAvailable" class="form-check-input" />
+                    <label asp-for="isAvailable" class="form-check-label">Available for Adoption</label>
+                </div>
+
+                <div class="form-group text-center mt-4">
+                    <input type="submit" value="Create Pet" class="btn btn-success btn-lg" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="mt-4 text-center">
+    <a asp-action="Index" class="btn btn-secondary">Back to Pet List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
