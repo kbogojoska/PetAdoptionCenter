@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +16,7 @@ using PetShop.Service.Mappers;
 
 namespace PetShop.Web.Controllers
 {
+    [Authorize]
     public class PetsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -29,6 +31,7 @@ namespace PetShop.Web.Controllers
         }
 
         // GET: Pets
+        [AllowAnonymous]
         public IActionResult Index(Guid? shelterId, string? city=null, bool? isAvailable = null)
         {
             var shelters = _shelterService.FindAll();
@@ -63,9 +66,10 @@ namespace PetShop.Web.Controllers
             return View(pets);
         }
 
-        
+
 
         // GET: Pets/Details/5
+        [AllowAnonymous]
         public async Task<IActionResult> Details(Guid id)
         {
             var pet = _petService.FindById(id);
@@ -148,6 +152,10 @@ namespace PetShop.Web.Controllers
             {
                 return NotFound();
             }
+            if (!pet.isAvailable)
+            {
+                return View("CannotEdit", pet);
+            }
             ViewData["Genders"] = Enum.GetValues(typeof(GenderType)).Cast<GenderType>().ToList();
             ViewData["Types"] = Enum.GetValues(typeof(AnimalType)).Cast<AnimalType>().ToList();
             ViewData["Sizes"] = Enum.GetValues(typeof(SizeOfAnimal)).Cast<SizeOfAnimal>().ToList();
@@ -202,6 +210,11 @@ namespace PetShop.Web.Controllers
             {
                 return NotFound();
             }
+
+            if(!pet.isAvailable)
+            {
+				return View("CannotDelete", pet);
+			}
 
             return View(pet);
         }

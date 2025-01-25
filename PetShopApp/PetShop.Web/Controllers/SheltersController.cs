@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.WebSockets;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,7 @@ using PetShop.Service.Interface;
 
 namespace PetShop.Web.Controllers
 {
+    [Authorize]
     public class SheltersController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -28,12 +30,14 @@ namespace PetShop.Web.Controllers
         }
 
         // GET: Shelters
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             return View(_shelterService.FindAll());
         }
 
         // GET: Shelters/Details/5
+        [AllowAnonymous]
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
