@@ -4,6 +4,7 @@ using System.Collections.Specialized;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -18,6 +19,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace PetShop.Web.Controllers
 {
+    [Authorize]
     public class AdoptionApplicationsController : Controller
     {
         private readonly ApplicationDbContext _context;

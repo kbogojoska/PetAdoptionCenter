@@ -106,6 +106,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShopApp/PetShop.Web/Views/Pets/CannotDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGV0c1xDYW5ub3REZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShopApp/PetShop.Web/Views/Pets/CannotEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGV0c1xDYW5ub3RFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/kater/Desktop/Faks/6_semestar/IS/seminarska-IS/PetShopApp/PetShopApp/PetShop.Web/Views/Pets/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGV0c1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

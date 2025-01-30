@@ -66,9 +66,12 @@
 			</div>
 
 
-			<a asp-action="Create" class="btn btn-primary align-self-center ms-3">
-				<i class="bi bi-plus-circle"></i> Add New Pet
-			</a>
+			@if (User.Identity.IsAuthenticated)
+			{
+				<a asp-action="Create" class="btn btn-primary align-self-center ms-3">
+					<i class="bi bi-plus-circle"></i> Add New Pet
+				</a>
+			}
 		</div>
 	</div>
 </div>
@@ -83,10 +86,12 @@
 					<img src="@item.ImageURL" alt="@item.Name" class="rounded" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
 				</div>
 				<div class="card-body">
-					<h5 class="card-title text-center">@item.Name@if (!item.isAvailable)
+					<h5 class="card-title text-center">
+						@item.Name@if (!item.isAvailable)
 						{
 							<span> (Adopted)</span>
-						}</h5>
+						}
+					</h5>
 					<p class="card-text text-muted small text-center">
 						<strong>Breed:</strong> @item.Breed <br />
 						<strong>Age:</strong> @item.Age years <br />
@@ -95,15 +100,21 @@
 					</p>
 					<div class="d-flex justify-content-between align-items-center gap-2 mt-3">
 						<div class="d-flex justify-content-start align-items-center gap-2 mt-3">
-							<a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">
-								<i class="bi bi-pencil-square"></i> Edit
-							</a>
+							@if (User.Identity.IsAuthenticated && item.isAvailable)
+							{
+								<a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">
+									<i class="bi bi-pencil-square"></i> Edit
+								</a>
+							}
 							<a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">
 								<i class="bi bi-info-circle"></i> Details
 							</a>
-							<a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">
-								<i class="bi bi-trash"></i> Delete
-							</a>
+							@if (User.Identity.IsAuthenticated && item.isAvailable)
+							{
+								<a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">
+									<i class="bi bi-trash"></i> Delete
+								</a>
+							}
 						</div>
 						@if (item.isAvailable)
 						{
