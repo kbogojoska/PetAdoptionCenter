@@ -60,7 +60,6 @@ namespace PetShop.Repository.Implementation
             {
                 throw new ArgumentNullException(nameof(user), "User cannot be null");
             }
-            // adoption application list?
             _entities.Update(user);
             _context.SaveChanges();
         }
