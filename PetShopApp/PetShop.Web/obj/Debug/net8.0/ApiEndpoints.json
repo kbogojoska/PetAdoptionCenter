@@ -64,5 +64,15 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "PetShop.Web.Controllers.API.BusinessController",
+    "Method": "TransferData",
+    "RelativePath": "api/business/transfer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

@@ -1,0 +1,64 @@
+﻿@model List<PetShop.Domain.DTO.BusinessDto>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Business List</title>
+    <style>
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .card p {
+            color: #666;
+            margin: 5px 0;
+        }
+         .title {
+            font-size: 30px;
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Explore Our Trusted Partnering Businesses</div>
+        <div class="card-container">
+            @foreach (var business in Model)
+            {
+                <div class="card">
+                    <h2>@business.Name</h2>
+                    <p><strong>Address:</strong> @business.Address</p>
+                    <p><strong>Rating:</strong> @business.Rating</p>
+                    <p><strong>Phone:</strong> @business.PhoneNumber</p>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

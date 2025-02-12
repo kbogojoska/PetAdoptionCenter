@@ -33,11 +33,14 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
+builder.Services.AddScoped(typeof(IBusinessRepository), typeof(BusinessRepository));
+
 builder.Services.AddScoped<IShelterService, ShelterService>();
 builder.Services.AddScoped<IAdoptionApplicationService, AdoptionApplicationService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IAdminService, AdminService>();
 builder.Services.AddScoped<IPetService, PetService>();
+builder.Services.AddScoped<IBusinessService, BusinessService>();
 
 builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
 	options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
